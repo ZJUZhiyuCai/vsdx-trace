@@ -271,8 +271,8 @@
     },
     {
       "path": "scripts/package_skill.py",
-      "size": 5343,
-      "sha256": "0b5342bb24f4cfd9af07df23c251658f7e2824190e8dc73fa5f87ed28c02d46c"
+      "size": 5677,
+      "sha256": "a230a9b67365721da6d0232e809ab662f7bc4ae459ec714d9bd3972dcba4f883"
     },
     {
       "path": "scripts/prepare_reference.py",

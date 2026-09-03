@@ -23,7 +23,7 @@ def test_skill_metadata_is_consistent() -> None:
     metadata = yaml.safe_load(frontmatter)
     interface = yaml.safe_load((ROOT / "agents/openai.yaml").read_text(encoding="utf-8"))
 
-    assert metadata["name"] == ROOT.name == "vsdx-trace"
+    assert metadata["name"] == "vsdx-trace"
     assert metadata["metadata"]["version"] == (ROOT / "VERSION").read_text().strip()
     assert "$vsdx-trace" in interface["interface"]["default_prompt"]
 
@@ -60,7 +60,7 @@ def test_full_package_is_deterministic_and_manifested(tmp_path: Path) -> None:
 
     with zipfile.ZipFile(first) as archive:
         names = set(archive.namelist())
-        prefix = f"{ROOT.name}/"
+        prefix = "vsdx-trace/"
         manifest = json.loads(archive.read(prefix + "PACKAGE_MANIFEST.json"))
         assert manifest["skill"] == "vsdx-trace"
         assert manifest["version"] == (ROOT / "VERSION").read_text().strip()

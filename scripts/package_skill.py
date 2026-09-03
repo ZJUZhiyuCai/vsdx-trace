@@ -91,10 +91,18 @@ def _zip_info(name: str) -> zipfile.ZipInfo:
     return info
 
 
+def canonical_skill_name(root: Path) -> str:
+    skill_text = (root / "SKILL.md").read_text(encoding="utf-8")
+    match = re.search(r"^name:\s*([a-z0-9-]+)\s*$", skill_text, flags=re.MULTILINE)
+    if not match:
+        raise ValueError("SKILL.md is missing a valid lowercase skill name")
+    return match.group(1)
+
+
 def package(root: Path, output: Path, edition: str) -> dict:
     root = root.resolve()
     output.parent.mkdir(parents=True, exist_ok=True)
-    prefix = root.name
+    prefix = canonical_skill_name(root)
     entries: list[dict[str, object]] = []
     with zipfile.ZipFile(output, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
         for source in sorted(root.rglob("*")):
