@@ -78,7 +78,7 @@
       "passed": true,
       "files_scanned": 60,
       "finding_count": 0,
-      "deny_terms_checked": 3
+      "deny_terms_checked": 4
     }
   },
   "limitations": [

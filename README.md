@@ -19,9 +19,24 @@ documents. Text, panels, arrows, nodes, and other diagram primitives remain
 selectable and editable. Raster content is kept only where vector reconstruction
 is not reasonable.
 
-<!-- full-only:start -->
-![Synthetic benchmark reconstructed as editable VSDX](assets/gold/synthetic_event_routing_preview.png)
-<!-- full-only:end -->
+<!-- repo-only:start -->
+![High-fidelity editable VSDX reconstruction](assets/marketing/failure-diagnosis-editable-vsdx.png)
+
+<p align="center"><strong>Rendered editable-VSDX reconstruction</strong></p>
+
+<details>
+<summary><strong>See the reference → reconstruction comparison</strong></summary>
+
+| Reference image | Rendered editable VSDX |
+| --- | --- |
+| ![Reference diagram](assets/marketing/failure-diagnosis-reference.png) | ![Editable VSDX reconstruction](assets/marketing/failure-diagnosis-editable-vsdx.png) |
+
+</details>
+
+<p align="center">
+  <a href="assets/marketing/vsdx-trace-poster-3x4.png">Download the 3:4 promotional poster</a>
+</p>
+<!-- repo-only:end -->
 
 ## Why VSDX Trace
 
@@ -31,7 +46,7 @@ is not reasonable.
 | Fidelity | Source pixels are the layout truth; render-and-compare loops expose drift. |
 | Reliability | Every delivery can be structurally validated as an OPC/VSDX package. |
 | Transparency | Reports distinguish structural, compatible-renderer, and real Visio testing. |
-| Privacy | User references never become reusable examples or public fixtures by default. |
+| Privacy | User references are private by default and enter public marketing only with explicit authorization; installable archives remain sanitized. |
 
 > [!IMPORTANT]
 > A full-page screenshot may look identical but is not an editable reconstruction.
@@ -144,6 +159,9 @@ agents/             Product-facing skill metadata
 scripts/            VSDX build, validation, render, compare, and privacy tools
 references/         Scene schema, playbook, OOXML notes, rubric, troubleshooting
 assets/templates/   Reusable scene starter
+<!-- repo-only:start -->
+assets/marketing/   Repository-only public showcase assets
+<!-- repo-only:end -->
 <!-- full-only:start -->
 assets/gold/        Privacy-safe synthetic benchmark
 <!-- full-only:end -->

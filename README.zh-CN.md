@@ -18,9 +18,24 @@ VSDX Trace 是一套 Agent Skill 与 Python 工具链，用于把截图、论文
 token 等元素保持可选择、可编辑；只有照片、显微图、热图等不适合矢量化的内容
 才保留为局部位图。
 
-<!-- full-only:start -->
-![合成基准的可编辑 VSDX 预览](assets/gold/synthetic_event_routing_preview.png)
-<!-- full-only:end -->
+<!-- repo-only:start -->
+![高保真可编辑 VSDX 复刻效果](assets/marketing/failure-diagnosis-editable-vsdx.png)
+
+<p align="center"><strong>可编辑 VSDX 渲染效果</strong></p>
+
+<details>
+<summary><strong>查看参考图 → 复刻结果对照</strong></summary>
+
+| 参考图 | 可编辑 VSDX 渲染结果 |
+| --- | --- |
+| ![参考架构图](assets/marketing/failure-diagnosis-reference.png) | ![可编辑 VSDX 复刻效果](assets/marketing/failure-diagnosis-editable-vsdx.png) |
+
+</details>
+
+<p align="center">
+  <a href="assets/marketing/vsdx-trace-poster-3x4.png">下载 3:4 宣传海报</a>
+</p>
+<!-- repo-only:end -->
 
 ## 核心保证
 
@@ -30,7 +45,7 @@ token 等元素保持可选择、可编辑；只有照片、显微图、热图�
 | 高保真 | 以原图像素坐标为唯一布局真值，通过渲染对比持续校准。 |
 | 可靠 | 验证 VSDX/OPC 结构、页面关系、Shape ID 和嵌入媒体。 |
 | 诚实 | 明确区分结构验证、兼容渲染验证和 Visio 实机验证。 |
-| 隐私 | 用户参考图和任务专用素材默认不会进入公共案例或发布包。 |
+| 隐私 | 用户参考图默认保持私有；只有获得明确授权才用于公开展示，安装包始终保持净化。 |
 
 > [!IMPORTANT]
 > 把完整截图放在主页面上虽然看起来一致，但不属于可编辑复刻。

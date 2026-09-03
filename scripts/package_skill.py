@@ -47,6 +47,8 @@ def include_path(relative: str, edition: str) -> bool:
     parts = set(Path(relative).parts)
     if parts & EXCLUDE_PARTS:
         return False
+    if relative.startswith("assets/marketing/"):
+        return False
     if Path(relative).name in EXCLUDE_ALWAYS or relative.endswith((".pyc", ".pyo")):
         return False
     if edition == "core":
@@ -56,7 +58,7 @@ def include_path(relative: str, edition: str) -> bool:
 
 
 def transform_text(relative: str, data: bytes, edition: str) -> bytes:
-    if edition != "core" or relative not in {
+    if relative not in {
         "README.md",
         "README.zh-CN.md",
         "SKILL.md",
@@ -66,11 +68,21 @@ def transform_text(relative: str, data: bytes, edition: str) -> bytes:
     text = data.decode("utf-8")
     if relative in {"README.md", "README.zh-CN.md"}:
         text = re.sub(
+            r"\n<!-- repo-only:start -->.*?<!-- repo-only:end -->\n",
+            "\n",
+            text,
+            flags=re.S,
+        )
+        if edition != "core":
+            return text.encode("utf-8")
+        text = re.sub(
             r"\n<!-- full-only:start -->.*?<!-- full-only:end -->\n",
             "\n",
             text,
             flags=re.S,
         )
+    elif edition != "core":
+        return data
     elif relative == "SKILL.md":
         text = re.sub(
             r"## Gold Standard\n.*?(?=\n## 失败模式)",
@@ -123,6 +135,8 @@ def package(root: Path, output: Path, edition: str) -> dict:
             "skill": prefix,
             "edition": "privacy-sanitized-full" if edition == "full" else "core",
             "version": (root / "VERSION").read_text(encoding="utf-8").strip(),
+            "content_scope": "generated-package",
+            "repository_only_content_excluded": True,
             "deterministic_archive_timestamps": True,
             "files": entries,
         }

@@ -10,3 +10,7 @@ owners.
 The benchmark images bundled under `assets/gold/` are generated
 programmatically by this repository. No user-uploaded reference image is
 included in the distribution.
+
+Repository-only images under `assets/marketing/` are displayed with the
+contributor's explicit authorization and are excluded from installable skill
+archives.

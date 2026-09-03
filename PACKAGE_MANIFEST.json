@@ -2,12 +2,14 @@
   "skill": "vsdx-trace",
   "edition": "privacy-sanitized-full",
   "version": "2.0.0",
+  "content_scope": "generated-package",
+  "repository_only_content_excluded": true,
   "deterministic_archive_timestamps": true,
   "files": [
     {
       "path": "CHANGELOG.md",
-      "size": 1177,
-      "sha256": "cd39d3d38652bc38bf452eb7622c431a867caa4c15c60e04d435817c89c02647"
+      "size": 1494,
+      "sha256": "558a5ea1e8ce1e50e28a909a287861202e429311994ed0005b4a047016f9f3f4"
     },
     {
       "path": "CODE_OF_CONDUCT.md",
@@ -26,23 +28,23 @@
     },
     {
       "path": "NOTICE.md",
-      "size": 461,
-      "sha256": "dcc7bb9505fe4d1d38895c6740cd179a6d05710ce8f738fd4e62687629a9c4a4"
+      "size": 621,
+      "sha256": "d729b42a5ccfab1c54be4db2909908119da5ddeb670fe7742d84ea632a9324ee"
     },
     {
       "path": "PRIVACY_AUDIT.json",
       "size": 3324,
-      "sha256": "eb09c0dda14f486e85770d0429f56fb2f7f7a09f14511cac0562941ee6fc0485"
+      "sha256": "a8ebc9e78be27ce4615deb41bc01d12cd39e5d4c3c8034c5a2d37fbc0bc93154"
     },
     {
       "path": "README.md",
-      "size": 5980,
-      "sha256": "b61bbd25c94e7a9674e6e40c3192e30190df3df5d07654b59a921f449f9209cd"
+      "size": 5890,
+      "sha256": "fc6d22e1fcfb1b81eabf4cbe9db4f21acffd46bee8b3130affa5bbd607565a0f"
     },
     {
       "path": "README.zh-CN.md",
-      "size": 4499,
-      "sha256": "983a18f771aa44d3a5818dc22f9df53aa3b6d77b26c82616f138fbe80982897d"
+      "size": 4395,
+      "sha256": "a088b43c6df4a31e7ac89119ea778d245f5a7311494367051ad7dae644c2110d"
     },
     {
       "path": "SECURITY.md",
@@ -57,7 +59,7 @@
     {
       "path": "SKILL_TEST_REPORT.json",
       "size": 2689,
-      "sha256": "0e689b43907d4379571ac7a58ddc2bedda4be53cc991e02387df1e51f47304a4"
+      "sha256": "ec8cd0737f47e9d3a2121c3798187d8dc95d520629e4713a1ea89c1bdd3c1661"
     },
     {
       "path": "SUPPORT.md",
@@ -271,8 +273,8 @@
     },
     {
       "path": "scripts/package_skill.py",
-      "size": 5677,
-      "sha256": "a230a9b67365721da6d0232e809ab662f7bc4ae459ec714d9bd3972dcba4f883"
+      "size": 6111,
+      "sha256": "404b70f203d8703e3b3be4c9a3f54000ca1eb96a6202c64f5936811a3d1a8317"
     },
     {
       "path": "scripts/prepare_reference.py",

@@ -41,7 +41,7 @@
     "files_scanned_including_this_report": 60,
     "finding_count": 0,
     "clean": true,
-    "explicit_deny_terms_checked": 3,
+    "explicit_deny_terms_checked": 4,
     "nested_archives": 2,
     "images_checked": 16,
     "all_nested_archive_timestamps_neutral": true
