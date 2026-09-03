@@ -64,7 +64,10 @@ def test_full_package_is_deterministic_and_manifested(tmp_path: Path) -> None:
         manifest = json.loads(archive.read(prefix + "PACKAGE_MANIFEST.json"))
         assert manifest["skill"] == "vsdx-trace"
         assert manifest["version"] == (ROOT / "VERSION").read_text().strip()
+        assert manifest["content_scope"] == "generated-package"
+        assert manifest["repository_only_content_excluded"] is True
         assert not any("__pycache__" in name or "/.git/" in name for name in names)
+        assert not any("/assets/marketing/" in name for name in names)
         for item in manifest["files"]:
             data = archive.read(prefix + item["path"])
             assert hashlib.sha256(data).hexdigest() == item["sha256"]

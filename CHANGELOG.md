@@ -5,6 +5,14 @@ All notable changes are documented here. The project follows
 
 ## [Unreleased]
 
+### Changed
+
+- Replaced the repository showcase with an explicitly authorized reconstruction
+  example and added a reference-to-VSDX comparison.
+- Added an architecture-style 3:4 promotional poster with a GitHub Star call to
+  action.
+- Kept all repository-only marketing assets out of Core and Full skill archives.
+
 ## [2.0.0] - 2026-09-03
 
 ### Changed
