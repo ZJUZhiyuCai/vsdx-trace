@@ -1,0 +1,38 @@
+name: Feature request
+description: Propose a focused improvement to reconstruction quality or reliability.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Preflight
+      options:
+        - label: I searched existing issues and discussions.
+          required: true
+        - label: This request can be explained without private source material.
+          required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What reconstruction or contributor problem should be solved?
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome
+      description: Describe observable behavior rather than a preferred implementation.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Synthetic example or acceptance criteria
+      description: Include a synthetic fixture or measurable quality condition when possible.

@@ -24,7 +24,7 @@ import math
 import random
 import sys
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any
 
 from PIL import Image, ImageDraw, ImageFont
 

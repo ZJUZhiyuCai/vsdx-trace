@@ -1,108 +1,174 @@
-# High-Fidelity Visio Reconstruction Skill
+<div align="center">
 
-![CI](https://github.com/ZJUZhiyuCai/high-fidelity-visio-reconstruction/actions/workflows/ci.yml/badge.svg)
+# VSDX Trace
 
-Reconstruct screenshots, scientific figures, system diagrams, flowcharts, and architecture graphics as high-fidelity, independently editable Microsoft Visio `.vsdx` files.
+**Turn raster diagrams into high-fidelity, independently editable Microsoft Visio files.**
 
-把截图、论文插图、系统图、流程图和模型架构图高保真复刻成逐元素可编辑的 Microsoft Visio `.vsdx` 文件。
+[![CI](https://github.com/ZJUZhiyuCai/vsdx-trace/actions/workflows/ci.yml/badge.svg)](https://github.com/ZJUZhiyuCai/vsdx-trace/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/ZJUZhiyuCai/vsdx-trace/actions/workflows/codeql.yml/badge.svg)](https://github.com/ZJUZhiyuCai/vsdx-trace/actions/workflows/codeql.yml)
+[![Release](https://img.shields.io/github/v/release/ZJUZhiyuCai/vsdx-trace)](https://github.com/ZJUZhiyuCai/vsdx-trace/releases)
+[![License: MIT](https://img.shields.io/badge/license-MIT-2ea44f)](LICENSE)
 
-![Synthetic Event Routing benchmark](assets/gold/synthetic_event_routing_preview.png)
+[English](README.md) · [简体中文](README.zh-CN.md)
 
-## Highlights
+</div>
 
-- Native editable text, panels, arrows, nodes, tokens, timelines, and diagram primitives.
-- Raster fragments are limited to content that is not reasonably vectorizable, such as photographs, microscopy, heatmaps, or dense evidence strips.
-- Pixel-coordinate scene format with fixed VSDX metadata and archive timestamps for reproducible builds.
-- Structural validation, headless rendering, overlays, checkerboards, and image-difference metrics.
-- A fully synthetic, reproducible Gold Standard with no user-provided source material.
-- A separate reference page for calibration without using the full reference image as the editable page background.
+VSDX Trace is an Agent Skill and Python toolchain for reconstructing screenshots,
+scientific figures, architecture diagrams, and flowcharts as native `.vsdx`
+documents. Text, panels, arrows, nodes, and other diagram primitives remain
+selectable and editable. Raster content is kept only where vector reconstruction
+is not reasonable.
 
-## Install in Codex
+<!-- full-only:start -->
+![Synthetic benchmark reconstructed as editable VSDX](assets/gold/synthetic_event_routing_preview.png)
+<!-- full-only:end -->
+
+## Why VSDX Trace
+
+| Requirement | Project guarantee |
+| --- | --- |
+| Editability | Main-page text and diagram primitives are native Visio shapes. |
+| Fidelity | Source pixels are the layout truth; render-and-compare loops expose drift. |
+| Reliability | Every delivery can be structurally validated as an OPC/VSDX package. |
+| Transparency | Reports distinguish structural, compatible-renderer, and real Visio testing. |
+| Privacy | User references never become reusable examples or public fixtures by default. |
+
+> [!IMPORTANT]
+> A full-page screenshot may look identical but is not an editable reconstruction.
+> VSDX Trace permits the complete source image only on a separate reference page.
+
+## Quick start
+
+### Install as a Codex skill
 
 ```bash
-git clone https://github.com/ZJUZhiyuCai/high-fidelity-visio-reconstruction.git \
-  ~/.codex/skills/high-fidelity-visio-reconstruction
+git clone https://github.com/ZJUZhiyuCai/vsdx-trace.git \
+  ~/.codex/skills/vsdx-trace
 ```
 
-The skill becomes discoverable on the next Codex turn. Other Agent Skills-compatible clients can install the repository as a skill folder containing `SKILL.md`.
+The skill becomes discoverable on the next Codex turn. Other Agent
+Skills-compatible clients can install the repository as a skill folder containing
+`SKILL.md`.
 
-## Use
+### Invoke
 
 Upload a clear reference image and ask:
 
-> Reconstruct this image as a high-fidelity, editable Visio file.
+> Use $vsdx-trace to reconstruct this image as a high-fidelity, editable VSDX file.
 
-或：
+The default delivery contains:
 
-> 把这张图高保真复刻成可编辑的 Visio 文件。
+- an editable `.vsdx` file;
+- a first-page PNG preview;
+- a structural validation report;
+- a separate original-reference page when requested.
 
-The default deliverables are an editable `.vsdx`, a first-page PNG preview, and a structural validation report. The generated VSDX includes an editable reconstruction page and, when requested, a separate original-reference page.
+## How it works
 
-## Requirements
+1. Decompose the source into layout, panels, flow, text, micro-elements, and irreducible raster regions.
+2. Record geometry in source-image pixel coordinates.
+3. Generate native Visio shapes and semantic names directly into the VSDX package.
+4. Validate relationships, page parts, shape IDs, and embedded media.
+5. Render with LibreOffice and Poppler, compare against the reference, and iterate on the largest errors.
+
+The scene format and supported primitives are documented in
+[`references/SCENE_SCHEMA.md`](references/SCENE_SCHEMA.md).
+
+## Local toolchain
+
+Requirements:
 
 - Python 3.10+
 - Pillow 10+
 - NumPy 1.26+
 - lxml 5–6
-- Optional: LibreOffice and Poppler for headless rendering QA
+- optional LibreOffice and Poppler for headless rendering QA
 
-Microsoft Visio is not required to construct the VSDX.
+Microsoft Visio is not required to construct a VSDX.
 
 ```bash
 python -m pip install -r requirements.txt
-```
-
-## Quick validation
-
-```bash
 mkdir -p work
+
 python scripts/build_from_scene.py \
   assets/templates/scene-template.json \
-  work/scene-template-output.vsdx \
-  --manifest work/scene-template-output.manifest.json
+  work/example.vsdx \
+  --manifest work/example.manifest.json
 
-python scripts/validate_vsdx.py work/scene-template-output.vsdx
+python scripts/validate_vsdx.py \
+  work/example.vsdx \
+  --output work/example.validation.json
 ```
 
 With LibreOffice and Poppler installed:
 
 ```bash
 python scripts/render_vsdx.py \
-  work/scene-template-output.vsdx work/rendered \
+  work/example.vsdx work/rendered \
   --dpi 100 --first-page-only
 ```
 
-## Repository layout
+<!-- full-only:start -->
+## Reproducible benchmark
 
-- `SKILL.md` — routing, workflow, privacy boundaries, and delivery requirements
-- `scripts/` — VSDX generation, validation, rendering, image comparison, crop extraction, and scene inspection
-- `references/` — reconstruction playbook, scene schema, OOXML notes, quality rubric, and troubleshooting
-- `assets/templates/` — reusable scene template and synthetic sample image
-- `assets/gold/` — synthetic reference, editable VSDX, preview, validation, and quality data
-- `examples/synthetic_event_routing_case.py` — deterministic end-to-end benchmark generator
-- `evals/evals.json` — behavioral evaluation prompts
-- `PRIVACY_AUDIT.json` — sanitization and privacy review record
+The bundled Synthetic Event Routing benchmark contains no user-provided material.
+It exercises custom arrows, cylinders, decoders, matrices, warning symbols,
+editable text, and local raster fragments.
 
-## Verified baseline
+| Metric | Recorded result |
+| --- | ---: |
+| Editable main-page shapes | 269 |
+| Editable text shapes | 54 |
+| Local bitmap shapes | 19 |
+| Pixel similarity | 0.9485 |
+| Edge F1, 1 px tolerance | 0.8388 |
+| Diagnostic score | 0.9171 |
 
-- Generic template: valid VSDX with 15 shapes, 6 text shapes, and 1 local bitmap.
-- Synthetic Gold Standard: 269 editable main-page shapes, including 54 text shapes and 19 local bitmaps, plus a synthetic reference page.
-- Recorded visual QA: approximately `0.9485` pixel similarity, `0.8388` edge F1, and `0.9171` diagnostic score.
-
-Rendering can vary with font substitution and antialiasing. Do not claim Microsoft Visio desktop validation unless the file has actually been tested there.
-
-Across Pillow or zlib versions, lossless PNG compression bytes may differ even when decoded pixels, VSDX XML, relationships, metadata, and timestamps are identical.
-
-## Privacy
-
-Real user references, crops, coordinates, local paths, names, organizations, chat identifiers, and build logs must not be copied into reusable examples or public releases. The bundled benchmark is generated programmatically and contains no user-provided reference image.
-
-Run the included scanner before publishing modified packages:
+Rebuild it with:
 
 ```bash
-python scripts/privacy_scan.py .
+python examples/synthetic_event_routing_case.py \
+  --work-dir work/benchmark \
+  --output work/benchmark/rebuilt.vsdx
 ```
 
-## License
+See [`references/GOLD_STANDARD.md`](references/GOLD_STANDARD.md) for the full
+test contract and reproducibility caveat.
+<!-- full-only:end -->
 
-MIT. See [LICENSE](LICENSE).
+## Project structure
+
+```text
+SKILL.md            Agent instructions and quality contract
+agents/             Product-facing skill metadata
+scripts/            VSDX build, validation, render, compare, and privacy tools
+references/         Scene schema, playbook, OOXML notes, rubric, troubleshooting
+assets/templates/   Reusable scene starter
+<!-- full-only:start -->
+assets/gold/        Privacy-safe synthetic benchmark
+<!-- full-only:end -->
+examples/           Runnable end-to-end examples
+evals/              Skill behavior evaluations
+tests/              Deterministic pipeline tests
+```
+
+## Contributing and security
+
+- Read [`CONTRIBUTING.md`](CONTRIBUTING.md) before opening a pull request.
+- Use [GitHub Discussions](https://github.com/ZJUZhiyuCai/vsdx-trace/discussions) for usage questions.
+- Report vulnerabilities privately according to [`SECURITY.md`](SECURITY.md).
+- Never submit private reference images, task-specific crops, local paths, or user identifiers.
+
+## Reproducibility note
+
+VSDX XML, relationships, metadata, timestamps, and decoded image pixels are
+reproducible. Lossless PNG byte streams can differ across Pillow or zlib versions
+while decoding to identical pixels.
+
+## License and trademarks
+
+Released under the [MIT License](LICENSE). See [NOTICE.md](NOTICE.md) for
+trademark and benchmark-asset notices.
+
+VSDX Trace is an independent community project and is not affiliated with or
+endorsed by Microsoft or OpenAI.

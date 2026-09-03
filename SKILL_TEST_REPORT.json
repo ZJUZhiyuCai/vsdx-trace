@@ -1,6 +1,6 @@
 {
-  "skill_name": "high-fidelity-visio-reconstruction",
-  "version": "1.1.0",
+  "skill_name": "vsdx-trace",
+  "version": "2.0.0",
   "edition": "privacy-sanitized-full",
   "tested_at_utc": "2026-09-03",
   "skill_spec_checks": {
@@ -8,28 +8,44 @@
     "yaml_frontmatter_parsed": true,
     "name_matches_directory": true,
     "name_pattern_valid": true,
-    "name_length": 34,
-    "description_length": 386,
-    "skill_md_lines": 312,
+    "name_length": 10,
+    "description_length": 344,
+    "skill_md_lines": 313,
+    "ui_metadata_present": true,
     "all_relative_markdown_links_exist": true,
     "all_referenced_scripts_and_assets_exist": true
   },
   "runtime": {
     "python": "3.14.6",
-    "pillow": "12.2.0",
-    "numpy": "2.4.6",
-    "lxml": "6.1.1",
+    "pillow": "12.3.0",
+    "numpy": "2.5.2",
+    "lxml": "6.1.3",
     "pyyaml": "6.0.3",
+    "pytest": "9.1.1",
+    "ruff": "0.16.5",
     "libreoffice": "26.2.5.2",
     "poppler_pdftoppm": "26.05.0",
     "microsoft_visio_desktop_tested": false
   },
-  "tests": {
-    "python_compile": {
+  "automated_checks": {
+    "ruff": "passed",
+    "pytest": {
       "passed": true,
-      "files": 11,
-      "scope": "scripts/*.py and examples/*.py"
+      "tests": 4
     },
+    "core_package": {
+      "passed": true,
+      "files": 38,
+      "skill_validation": "passed",
+      "dead_full_only_references": 0
+    },
+    "full_package": {
+      "passed": true,
+      "files": 60,
+      "skill_validation": "passed"
+    }
+  },
+  "pipeline_tests": {
     "generic_scene_build": {
       "passed": true,
       "structural_validation": "valid",
@@ -56,11 +72,11 @@
       "vsdx_xml_and_relationship_parts_byte_identical": true,
       "decoded_embedded_image_pixels_identical": true,
       "vsdx_archive_byte_identical": false,
-      "archive_difference_explanation": "PNG encoder output differs across Pillow/zlib versions even when decoded pixels, VSDX XML, relationships, metadata, and archive timestamps are identical."
+      "archive_difference_explanation": "Lossless PNG encoder bytes can differ across Pillow/zlib builds even when decoded pixels, VSDX XML, relationships, metadata, and timestamps are identical."
     },
     "privacy_scan": {
       "passed": true,
-      "files_scanned": 54,
+      "files_scanned": 60,
       "finding_count": 0,
       "deny_terms_checked": 3
     }
@@ -68,6 +84,6 @@
   "limitations": [
     "Microsoft Visio desktop was not available for an application-native open and render test.",
     "Font substitution and antialiasing may change text spacing on other machines.",
-    "Byte-identical PNG compression is not guaranteed across Pillow/zlib versions; decoded image pixels and deterministic VSDX metadata remain reproducible."
+    "Byte-identical PNG compression is not guaranteed across Pillow/zlib versions."
   ]
 }

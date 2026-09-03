@@ -1,6 +1,6 @@
 {
-  "skill": "high-fidelity-visio-reconstruction",
-  "version": "1.1.0",
+  "skill": "vsdx-trace",
+  "version": "2.0.0",
   "edition": "privacy-sanitized-full",
   "sanitization_strategy": "Remove task-specific material rather than attempting cosmetic anonymization; replace the worked example with a deterministic synthetic benchmark.",
   "removed_from_original_full_package": [
@@ -37,8 +37,8 @@
     "VSDX archive timestamps",
     "Explicit deny terms for the prior personalized case"
   ],
-  "root_scan": {
-    "files_scanned_including_this_report": 54,
+  "release_package_scan": {
+    "files_scanned_including_this_report": 60,
     "finding_count": 0,
     "clean": true,
     "explicit_deny_terms_checked": 3,
@@ -48,7 +48,7 @@
   },
   "manual_review": {
     "completed": true,
-    "result": "No personal name, institution, email, chat/file identifier, local path, real photograph, user-supplied source image, or task-specific worked example retained.",
+    "result": "No private name, institution, email, chat/file identifier, local path, real photograph, user-supplied source image, or task-specific worked example retained. Repository URLs contain only the public maintainer handle.",
     "microsoft_visio_desktop_tested": false
   },
   "limitations": [
@@ -58,9 +58,13 @@
   ],
   "package_release_verification": {
     "package_manifest_hashes_verified": true,
-    "extracted_package_files_scanned": 54,
+    "core_package_files": 38,
+    "full_package_files": 60,
+    "extracted_full_package_files_scanned": 60,
     "privacy_findings": 0,
     "package_entry_timestamps_neutral": true,
+    "core_skill_validation_passed": true,
+    "full_skill_validation_passed": true,
     "bundled_gold_vsdx_structurally_valid": true,
     "bundled_template_vsdx_structurally_valid": true,
     "bundled_python_sources_compile": true

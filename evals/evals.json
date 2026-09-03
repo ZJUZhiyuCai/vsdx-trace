@@ -1,6 +1,6 @@
 {
-  "skill_name": "high-fidelity-visio-reconstruction",
-  "version": "1.1.0",
+  "skill_name": "vsdx-trace",
+  "version": "2.0.0",
   "evals": [
     {
       "id": "zh-complex-academic-figure",
