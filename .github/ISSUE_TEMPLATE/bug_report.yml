@@ -1,0 +1,58 @@
+name: Bug report
+description: Report a reproducible problem with the skill or VSDX toolchain.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a bug. Use synthetic inputs only; never attach a private diagram or customer file.
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Preflight
+      options:
+        - label: I searched existing issues and discussions.
+          required: true
+        - label: My reproduction contains no private or identifying material.
+          required: true
+  - type: input
+    id: version
+    attributes:
+      label: VSDX Trace version
+      placeholder: "2.0.0"
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include OS, Python, Pillow, NumPy, lxml, LibreOffice, and Poppler versions when relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Minimal reproduction
+      description: Provide exact commands and a minimal synthetic scene or fixture.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior and validation output
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Add sanitized screenshots or reports only when they materially help.

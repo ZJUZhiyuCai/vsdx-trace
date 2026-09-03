@@ -1,0 +1,8 @@
+interface:
+  display_name: "VSDX Trace"
+  short_description: "Turn reference images into editable Visio diagrams"
+  brand_color: "#6C78D8"
+  default_prompt: "Use $vsdx-trace to reconstruct this reference image as a high-fidelity, editable VSDX file."
+
+policy:
+  allow_implicit_invocation: true

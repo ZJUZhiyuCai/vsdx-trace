@@ -1,14 +1,15 @@
 ---
-name: high-fidelity-visio-reconstruction
-description: Reconstruct screenshots, scientific paper figures, system diagrams, flowcharts, model architecture graphics, and other raster references as high-fidelity, independently editable Microsoft Visio VSDX files. Use when a user asks to 复刻、临摹、重绘图片为 Visio/VSDX, requests an editable diagram, demands very high similarity, or asks for iterative visual matching rather than a flat embedded image.
+name: vsdx-trace
+description: Reconstruct raster references as high-fidelity, independently editable Microsoft Visio VSDX files. Use when a user asks to 复刻、临摹、重绘 a screenshot, paper figure, flowchart, system diagram, or model architecture as editable Visio, especially when iterative visual matching matters. Do not use for ordinary image generation or flat image embedding.
 license: See LICENSE
 metadata:
   author: OpenAI
-  version: "1.1.0"
+  maintainer: ZJUZhiyuCai
+  version: "2.0.0"
   artifact-type: "vsdx"
 ---
 
-# High-Fidelity Visio Reconstruction
+# VSDX Trace
 
 把一张参考图片复刻为高相似度、结构清晰、可逐元素编辑的 `.vsdx`，并通过结构验证和渲染对比反复校准。
 

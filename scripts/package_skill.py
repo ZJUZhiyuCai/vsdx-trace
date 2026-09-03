@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Package the skill into deterministic Core and privacy-sanitized Full ZIPs.
+"""Package VSDX Trace into deterministic Core and privacy-sanitized Full ZIPs.
 
 Core omits the synthetic Gold Standard and its exact example script. Full keeps
 all generic tooling plus the procedurally generated Gold Standard. Neither
@@ -15,8 +15,27 @@ import re
 import zipfile
 from pathlib import Path
 
-EXCLUDE_ALWAYS = {".DS_Store", "PACKAGE_MANIFEST.json"}
-EXCLUDE_PARTS = {"__pycache__", ".pytest_cache", ".git", "work"}
+EXCLUDE_ALWAYS = {
+    ".DS_Store",
+    ".editorconfig",
+    ".gitattributes",
+    ".gitignore",
+    "PACKAGE_MANIFEST.json",
+    "pyproject.toml",
+    "requirements-dev.txt",
+}
+EXCLUDE_PARTS = {
+    "__pycache__",
+    ".git",
+    ".github",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".venv",
+    "dist",
+    "docs",
+    "tests",
+    "work",
+}
 CORE_EXCLUDE_FILES = {
     "examples/synthetic_event_routing_case.py",
     "references/GOLD_STANDARD.md",
@@ -37,19 +56,21 @@ def include_path(relative: str, edition: str) -> bool:
 
 
 def transform_text(relative: str, data: bytes, edition: str) -> bytes:
-    if edition != "core" or relative not in {"README.md", "SKILL.md", "examples/README.md"}:
+    if edition != "core" or relative not in {
+        "README.md",
+        "README.zh-CN.md",
+        "SKILL.md",
+        "examples/README.md",
+    }:
         return data
     text = data.decode("utf-8")
-    if relative == "README.md":
-        text = text.replace(
-            "、评测集，以及一个可复现的复杂 Gold Standard；Gold Standard 的文字、位图和参考图均为程序化生成，不含任何用户原图、个人身份、机构、聊天记录或本地路径。",
-            "和评测集。该 Core 版不含合成 Gold Standard 资产。",
+    if relative in {"README.md", "README.zh-CN.md"}:
+        text = re.sub(
+            r"\n<!-- full-only:start -->.*?<!-- full-only:end -->\n",
+            "\n",
+            text,
+            flags=re.S,
         )
-        text = re.sub(r"- `assets/gold/`：.*\n", "", text)
-        text = re.sub(r"- `examples/synthetic_event_routing_case\.py`：.*\n", "", text)
-        text = re.sub(r"## 已验证基线\n.*?(?=\n## 隐私边界)",
-                      "## 已验证基线\n\n- 通用模板：结构验证通过；第一页 15 个形状、6 个文本形状、1 个局部位图。\n- VSDX 可使用固定元数据和确定性 ZIP 时间戳生成。\n",
-                      text, flags=re.S)
     elif relative == "SKILL.md":
         text = re.sub(
             r"## Gold Standard\n.*?(?=\n## 失败模式)",
@@ -124,9 +145,9 @@ def main() -> int:
     reports = []
     for edition in editions:
         filename = (
-            "high-fidelity-visio-reconstruction.skill.zip"
+            "vsdx-trace.skill.zip"
             if edition == "core"
-            else "high-fidelity-visio-reconstruction-privacy-sanitized-full.skill.zip"
+            else "vsdx-trace-privacy-sanitized-full.skill.zip"
         )
         reports.append(package(args.root, args.output_dir / filename, edition))
     print(json.dumps({"packages": reports}, ensure_ascii=False, indent=2))
