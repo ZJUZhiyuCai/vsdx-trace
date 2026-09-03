@@ -1,0 +1,3344 @@
+{
+  "version": "1.0",
+  "document": {
+    "title": "Synthetic event routing benchmark",
+    "author": "OpenAI",
+    "ppi": 100,
+    "created_utc": "2000-01-01T00:00:00Z",
+    "deterministic_zip_timestamps": true
+  },
+  "canvas": {
+    "width_px": 1600,
+    "height_px": 1000,
+    "background": "#FFFFFF"
+  },
+  "reference_image": "synthetic_event_routing_reference.png",
+  "include_reference_page": true,
+  "reference_page_name": "Synthetic Reference",
+  "pages": [
+    {
+      "name": "Editable Reconstruction",
+      "background": "#FFFFFF",
+      "shapes": [
+        {
+          "type": "roundrect",
+          "name": "Diagnosis background",
+          "x": 8,
+          "y": 8,
+          "w": 1584,
+          "h": 300,
+          "radius_px": 26,
+          "fill": "#EEF2F8",
+          "line": "none"
+        },
+        {
+          "type": "text",
+          "name": "Main title",
+          "x": 500,
+          "y": 5,
+          "w": 600,
+          "h": 45,
+          "text": "Reliability Diagnosis",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 23,
+            "bold": true,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "roundrect",
+          "name": "Baseline failure panel",
+          "x": 25,
+          "y": 52,
+          "w": 745,
+          "h": 238,
+          "radius_px": 24,
+          "fill": "none",
+          "line": "#315D8D",
+          "line_width_px": 3,
+          "dash": true
+        },
+        {
+          "type": "roundrect",
+          "name": "Protected routing panel",
+          "x": 790,
+          "y": 52,
+          "w": 785,
+          "h": 238,
+          "radius_px": 24,
+          "fill": "none",
+          "line": "#315D8D",
+          "line_width_px": 3,
+          "dash": true
+        },
+        {
+          "type": "text",
+          "name": "Baseline title",
+          "x": 85,
+          "y": 57,
+          "w": 620,
+          "h": 35,
+          "text": "baseline event-retrieval failure",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 17,
+            "bold": false,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "text",
+          "name": "Protected title",
+          "x": 905,
+          "y": 57,
+          "w": 555,
+          "h": 35,
+          "text": "confidence-preserving event routing",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 17,
+            "bold": false,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "rect",
+          "name": "Stale frame border 1",
+          "x": 63,
+          "y": 108,
+          "w": 142,
+          "h": 83,
+          "fill": "#FFFFFF",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "image",
+          "name": "Stale frame 1",
+          "x": 65,
+          "y": 110,
+          "w": 138,
+          "h": 79,
+          "path": "media/abstract_frame_01.png",
+          "grayscale": true,
+          "alpha": 0.68
+        },
+        {
+          "type": "rect",
+          "name": "Stale frame border 2",
+          "x": 91,
+          "y": 122,
+          "w": 142,
+          "h": 83,
+          "fill": "#FFFFFF",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "image",
+          "name": "Stale frame 2",
+          "x": 93,
+          "y": 124,
+          "w": 138,
+          "h": 79,
+          "path": "media/abstract_frame_02.png",
+          "grayscale": true,
+          "alpha": 0.68
+        },
+        {
+          "type": "rect",
+          "name": "Stale frame border 3",
+          "x": 119,
+          "y": 136,
+          "w": 142,
+          "h": 83,
+          "fill": "#FFFFFF",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "image",
+          "name": "Stale frame 3",
+          "x": 121,
+          "y": 138,
+          "w": 138,
+          "h": 79,
+          "path": "media/abstract_frame_03.png",
+          "grayscale": true,
+          "alpha": 0.68
+        },
+        {
+          "type": "rect",
+          "name": "Stale frame border 4",
+          "x": 147,
+          "y": 150,
+          "w": 142,
+          "h": 83,
+          "fill": "#FFFFFF",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "image",
+          "name": "Stale frame 4",
+          "x": 149,
+          "y": 152,
+          "w": 138,
+          "h": 79,
+          "path": "media/abstract_frame_04.png",
+          "grayscale": true,
+          "alpha": 0.68
+        },
+        {
+          "type": "rect",
+          "name": "Stale frame border 5",
+          "x": 175,
+          "y": 164,
+          "w": 142,
+          "h": 83,
+          "fill": "#FFFFFF",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "image",
+          "name": "Stale frame 5",
+          "x": 177,
+          "y": 166,
+          "w": 138,
+          "h": 79,
+          "path": "media/abstract_frame_05.png",
+          "grayscale": false,
+          "alpha": 1.0
+        },
+        {
+          "type": "arrow",
+          "name": "Stale stack to candidates",
+          "points": [
+            [
+              245,
+              171
+            ],
+            [
+              340,
+              171
+            ]
+          ],
+          "line": "#111111",
+          "line_width_px": 3,
+          "head_length_px": 16
+        },
+        {
+          "type": "roundrect",
+          "name": "Candidate token 1",
+          "x": 372,
+          "y": 100,
+          "w": 105,
+          "h": 29,
+          "radius_px": 7,
+          "fill": "#E8EEF7",
+          "line": "#1F3A63",
+          "line_width_px": 2,
+          "text": "event A",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 11,
+            "bold": false,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "roundrect",
+          "name": "Candidate token 2",
+          "x": 372,
+          "y": 134,
+          "w": 105,
+          "h": 29,
+          "radius_px": 7,
+          "fill": "#E8EEF7",
+          "line": "#1F3A63",
+          "line_width_px": 2,
+          "text": "event B",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 11,
+            "bold": false,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "roundrect",
+          "name": "Candidate token 3",
+          "x": 372,
+          "y": 168,
+          "w": 105,
+          "h": 29,
+          "radius_px": 7,
+          "fill": "#E8EEF7",
+          "line": "#1F3A63",
+          "line_width_px": 2,
+          "text": "event C",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 11,
+            "bold": false,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "roundrect",
+          "name": "Candidate token 4",
+          "x": 372,
+          "y": 202,
+          "w": 105,
+          "h": 29,
+          "radius_px": 7,
+          "fill": "#F5DFDD",
+          "line": "#B53B32",
+          "line_width_px": 2,
+          "text": "event D",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 11,
+            "bold": false,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "roundrect",
+          "name": "Candidate token 5",
+          "x": 372,
+          "y": 236,
+          "w": 105,
+          "h": 29,
+          "radius_px": 7,
+          "fill": "#F5DFDD",
+          "line": "#B53B32",
+          "line_width_px": 2,
+          "text": "event E",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 11,
+            "bold": false,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "text",
+          "name": "Collision formula left",
+          "x": 500,
+          "y": 125,
+          "w": 140,
+          "h": 42,
+          "text": "score = Σ",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 16,
+            "bold": false,
+            "color": "#111111",
+            "align": "left",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "text",
+          "name": "Collision formula middle",
+          "x": 620,
+          "y": 125,
+          "w": 78,
+          "h": 42,
+          "text": "high",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 16,
+            "bold": false,
+            "color": "#B53B32",
+            "align": "left",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "text",
+          "name": "Collision formula right",
+          "x": 693,
+          "y": 125,
+          "w": 55,
+          "h": 42,
+          "text": "risk",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 16,
+            "bold": false,
+            "color": "#111111",
+            "align": "left",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "text",
+          "name": "Stale events label",
+          "x": 60,
+          "y": 245,
+          "w": 185,
+          "h": 30,
+          "text": "stale events",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 14,
+            "bold": false,
+            "color": "#B53B32",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "text",
+          "name": "Spurious matches label",
+          "x": 245,
+          "y": 245,
+          "w": 230,
+          "h": 30,
+          "text": "spurious matches",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 14,
+            "bold": false,
+            "color": "#B53B32",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "text",
+          "name": "Collision label",
+          "x": 505,
+          "y": 230,
+          "w": 185,
+          "h": 45,
+          "text": "retrieval\ncollision",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 14,
+            "bold": false,
+            "color": "#B53B32",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "polyline",
+          "name": "Stale label leader",
+          "points": [
+            [
+              135,
+              237
+            ],
+            [
+              165,
+              195
+            ]
+          ],
+          "line": "#B53B32",
+          "line_width_px": 2,
+          "fill": "none"
+        },
+        {
+          "type": "polyline",
+          "name": "Spurious label leader",
+          "points": [
+            [
+              335,
+              238
+            ],
+            [
+              310,
+              196
+            ]
+          ],
+          "line": "#B53B32",
+          "line_width_px": 2,
+          "fill": "none"
+        },
+        {
+          "type": "polyline",
+          "name": "Collision label leader",
+          "points": [
+            [
+              540,
+              229
+            ],
+            [
+              475,
+              184
+            ]
+          ],
+          "line": "#B53B32",
+          "line_width_px": 2,
+          "fill": "none"
+        },
+        {
+          "type": "cylinder",
+          "name": "Protected memory bank",
+          "x": 835,
+          "y": 105,
+          "w": 170,
+          "h": 105,
+          "fill": "#CFDCEE",
+          "line": "#1F3A63",
+          "line_width_px": 3,
+          "text": "Memory\nBank",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 17,
+            "bold": false,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "triangle",
+          "name": "Upper uncertainty warning triangle",
+          "x": 995,
+          "y": 87,
+          "w": 42,
+          "h": 42,
+          "fill": "#F5DFDD",
+          "line": "#B53B32",
+          "line_width_px": 3
+        },
+        {
+          "type": "text",
+          "name": "Upper uncertainty warning mark",
+          "x": 1007.6,
+          "y": 95.4,
+          "w": 16.8,
+          "h": 23.1,
+          "text": "!",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 15,
+            "bold": true,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "triangle",
+          "name": "Lower uncertainty warning triangle",
+          "x": 980,
+          "y": 188,
+          "w": 42,
+          "h": 42,
+          "fill": "#F5DFDD",
+          "line": "#B53B32",
+          "line_width_px": 3
+        },
+        {
+          "type": "text",
+          "name": "Lower uncertainty warning mark",
+          "x": 992.6,
+          "y": 196.4,
+          "w": 16.8,
+          "h": 23.1,
+          "text": "!",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 15,
+            "bold": true,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "arrow",
+          "name": "Bank to gate",
+          "points": [
+            [
+              1015,
+              158
+            ],
+            [
+              1085,
+              158
+            ]
+          ],
+          "line": "#111111",
+          "line_width_px": 3,
+          "head_length_px": 15
+        },
+        {
+          "type": "roundrect",
+          "name": "Confidence gate",
+          "x": 1090,
+          "y": 127,
+          "w": 49,
+          "h": 56,
+          "radius_px": 10,
+          "fill": "#CFDCEE",
+          "line": "#1F3A63",
+          "line_width_px": 3,
+          "text": "g",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 19,
+            "bold": true,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "arrow",
+          "name": "Gate to protected tokens",
+          "points": [
+            [
+              1142,
+              158
+            ],
+            [
+              1205,
+              158
+            ]
+          ],
+          "line": "#111111",
+          "line_width_px": 3,
+          "head_length_px": 15
+        },
+        {
+          "type": "roundrect",
+          "name": "Protected token 1",
+          "x": 1218,
+          "y": 92,
+          "w": 100,
+          "h": 30,
+          "radius_px": 6,
+          "fill": "#E8EEF7",
+          "line": "#1F3A63",
+          "line_width_px": 2,
+          "text": "event",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 11,
+            "bold": false,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "roundrect",
+          "name": "Protected token 2",
+          "x": 1218,
+          "y": 128,
+          "w": 100,
+          "h": 30,
+          "radius_px": 6,
+          "fill": "#E8EEF7",
+          "line": "#1F3A63",
+          "line_width_px": 2,
+          "text": "event",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 11,
+            "bold": false,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "roundrect",
+          "name": "Protected token 3",
+          "x": 1218,
+          "y": 164,
+          "w": 100,
+          "h": 30,
+          "radius_px": 6,
+          "fill": "#E8EEF7",
+          "line": "#1F3A63",
+          "line_width_px": 2,
+          "text": "...",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 11,
+            "bold": false,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "roundrect",
+          "name": "Protected token 4",
+          "x": 1218,
+          "y": 200,
+          "w": 100,
+          "h": 30,
+          "radius_px": 6,
+          "fill": "#DFEBD6",
+          "line": "#86AE6B",
+          "line_width_px": 2,
+          "text": "focus",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 11,
+            "bold": false,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "text",
+          "name": "Plus sign top",
+          "x": 1336,
+          "y": 131,
+          "w": 40,
+          "h": 50,
+          "text": "+",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 23,
+            "bold": true,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "rect",
+          "name": "Query frame border",
+          "x": 1387,
+          "y": 110,
+          "w": 150,
+          "h": 88,
+          "fill": "#FFFFFF",
+          "line": "#111111",
+          "line_width_px": 2
+        },
+        {
+          "type": "image",
+          "name": "Query-specific evidence",
+          "x": 1390,
+          "y": 113,
+          "w": 144,
+          "h": 82,
+          "path": "media/abstract_frame_09.png"
+        },
+        {
+          "type": "text",
+          "name": "Compressed context label",
+          "x": 835,
+          "y": 218,
+          "w": 360,
+          "h": 60,
+          "text": "Compressed Temporal\nContext",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 16,
+            "bold": false,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "text",
+          "name": "Query evidence label",
+          "x": 1325,
+          "y": 218,
+          "w": 235,
+          "h": 60,
+          "text": "Query-Specific\nEvidence",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 16,
+            "bold": false,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "text",
+          "name": "Routing label",
+          "x": 1035,
+          "y": 88,
+          "w": 145,
+          "h": 38,
+          "text": "routing\ngate",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 12,
+            "bold": false,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "rect",
+          "name": "History frame border 1",
+          "x": 56,
+          "y": 348,
+          "w": 120,
+          "h": 70,
+          "fill": "#FFFFFF",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "image",
+          "name": "History frame 1",
+          "x": 58,
+          "y": 350,
+          "w": 116,
+          "h": 66,
+          "path": "media/abstract_frame_01.png",
+          "grayscale": true,
+          "alpha": 0.72
+        },
+        {
+          "type": "rect",
+          "name": "History frame border 2",
+          "x": 56,
+          "y": 433,
+          "w": 120,
+          "h": 70,
+          "fill": "#FFFFFF",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "image",
+          "name": "History frame 2",
+          "x": 58,
+          "y": 435,
+          "w": 116,
+          "h": 66,
+          "path": "media/abstract_frame_02.png",
+          "grayscale": true,
+          "alpha": 0.72
+        },
+        {
+          "type": "rect",
+          "name": "History frame border 3",
+          "x": 56,
+          "y": 518,
+          "w": 120,
+          "h": 70,
+          "fill": "#FFFFFF",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "image",
+          "name": "History frame 3",
+          "x": 58,
+          "y": 520,
+          "w": 116,
+          "h": 66,
+          "path": "media/abstract_frame_03.png",
+          "grayscale": false,
+          "alpha": 1.0
+        },
+        {
+          "type": "rect",
+          "name": "History frame border 4",
+          "x": 56,
+          "y": 603,
+          "w": 120,
+          "h": 70,
+          "fill": "#FFFFFF",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "image",
+          "name": "History frame 4",
+          "x": 58,
+          "y": 605,
+          "w": 116,
+          "h": 66,
+          "path": "media/abstract_frame_04.png",
+          "grayscale": true,
+          "alpha": 0.72
+        },
+        {
+          "type": "polyline",
+          "name": "History bracket",
+          "points": [
+            [
+              182,
+              365
+            ],
+            [
+              198,
+              365
+            ],
+            [
+              198,
+              654
+            ],
+            [
+              182,
+              654
+            ]
+          ],
+          "line": "#111111",
+          "line_width_px": 3,
+          "fill": "none"
+        },
+        {
+          "type": "arrow",
+          "name": "History to current stack",
+          "points": [
+            [
+              198,
+              510
+            ],
+            [
+              248,
+              510
+            ]
+          ],
+          "line": "#111111",
+          "line_width_px": 3,
+          "head_length_px": 14
+        },
+        {
+          "type": "rect",
+          "name": "Current stack border 1",
+          "x": 248,
+          "y": 466,
+          "w": 136,
+          "h": 81,
+          "fill": "#FFFFFF",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "image",
+          "name": "Current stack frame 1",
+          "x": 250,
+          "y": 468,
+          "w": 132,
+          "h": 77,
+          "path": "media/abstract_frame_06.png",
+          "grayscale": true,
+          "alpha": 0.65
+        },
+        {
+          "type": "rect",
+          "name": "Current stack border 2",
+          "x": 262,
+          "y": 476,
+          "w": 136,
+          "h": 81,
+          "fill": "#FFFFFF",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "image",
+          "name": "Current stack frame 2",
+          "x": 264,
+          "y": 478,
+          "w": 132,
+          "h": 77,
+          "path": "media/abstract_frame_07.png",
+          "grayscale": true,
+          "alpha": 0.65
+        },
+        {
+          "type": "rect",
+          "name": "Current stack border 3",
+          "x": 276,
+          "y": 486,
+          "w": 136,
+          "h": 81,
+          "fill": "#FFFFFF",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "image",
+          "name": "Current stack frame 3",
+          "x": 278,
+          "y": 488,
+          "w": 132,
+          "h": 77,
+          "path": "media/abstract_frame_08.png",
+          "grayscale": true,
+          "alpha": 0.65
+        },
+        {
+          "type": "rect",
+          "name": "Current stack border 4",
+          "x": 290,
+          "y": 496,
+          "w": 136,
+          "h": 81,
+          "fill": "#FFFFFF",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "image",
+          "name": "Current stack frame 4",
+          "x": 292,
+          "y": 498,
+          "w": 132,
+          "h": 77,
+          "path": "media/abstract_frame_09.png",
+          "grayscale": false,
+          "alpha": 1.0
+        },
+        {
+          "type": "arrow",
+          "name": "Current stack to video encoder",
+          "points": [
+            [
+              425,
+              530
+            ],
+            [
+              480,
+              530
+            ]
+          ],
+          "line": "#111111",
+          "line_width_px": 3,
+          "head_length_px": 15
+        },
+        {
+          "type": "trapezoid",
+          "name": "Video encoder",
+          "x": 485,
+          "y": 410,
+          "w": 165,
+          "h": 225,
+          "orientation": "right_narrow",
+          "inset_px": 40,
+          "fill": "#CFDCEE",
+          "line": "#1F3A63",
+          "line_width_px": 3,
+          "text": "Video\nEncoder",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 20,
+            "bold": false,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "arrow",
+          "name": "Video encoder to memory router",
+          "points": [
+            [
+              653,
+              530
+            ],
+            [
+              710,
+              530
+            ]
+          ],
+          "line": "#111111",
+          "line_width_px": 3,
+          "head_length_px": 15
+        },
+        {
+          "type": "roundrect",
+          "name": "Memory router",
+          "x": 715,
+          "y": 475,
+          "w": 185,
+          "h": 110,
+          "radius_px": 24,
+          "fill": "#CFDCEE",
+          "line": "#1F3A63",
+          "line_width_px": 3,
+          "text": "Memory\nRouter",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 19,
+            "bold": false,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "cylinder",
+          "name": "Compressed memory bank",
+          "x": 735,
+          "y": 330,
+          "w": 165,
+          "h": 92,
+          "fill": "#CFDCEE",
+          "line": "#1F3A63",
+          "line_width_px": 3
+        },
+        {
+          "type": "text",
+          "name": "Compressed bank label",
+          "x": 915,
+          "y": 332,
+          "w": 240,
+          "h": 80,
+          "text": "Compressed\nMemory Bank",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 17,
+            "bold": false,
+            "color": "#111111",
+            "align": "left",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "arrow",
+          "name": "Bank gate one",
+          "points": [
+            [
+              790,
+              421
+            ],
+            [
+              790,
+              474
+            ]
+          ],
+          "line": "#111111",
+          "line_width_px": 3,
+          "head_length_px": 14
+        },
+        {
+          "type": "arrow",
+          "name": "Bank gate two",
+          "points": [
+            [
+              835,
+              421
+            ],
+            [
+              835,
+              474
+            ]
+          ],
+          "line": "#111111",
+          "line_width_px": 3,
+          "head_length_px": 14
+        },
+        {
+          "type": "text",
+          "name": "Gates label",
+          "x": 680,
+          "y": 420,
+          "w": 100,
+          "h": 40,
+          "text": "gates",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 16,
+            "bold": false,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "roundrect",
+          "name": "Small gate icon",
+          "x": 858,
+          "y": 432,
+          "w": 38,
+          "h": 34,
+          "radius_px": 8,
+          "fill": "#CFDCEE",
+          "line": "#1F3A63",
+          "line_width_px": 2,
+          "text": "g",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 13,
+            "bold": true,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "arrow",
+          "name": "Memory router to temporal analyzer",
+          "points": [
+            [
+              900,
+              530
+            ],
+            [
+              965,
+              530
+            ]
+          ],
+          "line": "#111111",
+          "line_width_px": 3,
+          "head_length_px": 15
+        },
+        {
+          "type": "roundrect",
+          "name": "Temporal analyzer",
+          "x": 970,
+          "y": 475,
+          "w": 190,
+          "h": 110,
+          "radius_px": 24,
+          "fill": "#CFDCEE",
+          "line": "#1F3A63",
+          "line_width_px": 3,
+          "text": "Temporal\nAnalyzer",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 19,
+            "bold": false,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "parallelogram",
+          "name": "Question encoder",
+          "x": 700,
+          "y": 625,
+          "w": 240,
+          "h": 100,
+          "slant": "right",
+          "inset_px": 32,
+          "fill": "#CFDCEE",
+          "line": "#1F3A63",
+          "line_width_px": 3,
+          "text": "Question\nEncoder",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 18,
+            "bold": false,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "arrow",
+          "name": "Question to memory router",
+          "points": [
+            [
+              810,
+              625
+            ],
+            [
+              810,
+              585
+            ]
+          ],
+          "line": "#111111",
+          "line_width_px": 3,
+          "head_length_px": 14
+        },
+        {
+          "type": "arrow",
+          "name": "Question to temporal analyzer",
+          "points": [
+            [
+              925,
+              675
+            ],
+            [
+              1065,
+              675
+            ],
+            [
+              1065,
+              585
+            ]
+          ],
+          "line": "#111111",
+          "line_width_px": 3,
+          "head_length_px": 14
+        },
+        {
+          "type": "arrow",
+          "name": "Temporal analyzer to decoder",
+          "points": [
+            [
+              1160,
+              530
+            ],
+            [
+              1218,
+              530
+            ]
+          ],
+          "line": "#111111",
+          "line_width_px": 3,
+          "head_length_px": 15
+        },
+        {
+          "type": "trapezoid",
+          "name": "Answer and grounding decoder",
+          "x": 1225,
+          "y": 390,
+          "w": 190,
+          "h": 285,
+          "orientation": "right_narrow",
+          "inset_px": 42,
+          "fill": "#CFDCEE",
+          "line": "#1F3A63",
+          "line_width_px": 3,
+          "text": "Answer &\nGrounding\nDecoder",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 18,
+            "bold": false,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "arrow",
+          "name": "Decoder to answer card",
+          "points": [
+            [
+              1415,
+              465
+            ],
+            [
+              1462,
+              465
+            ]
+          ],
+          "line": "#111111",
+          "line_width_px": 3,
+          "head_length_px": 14
+        },
+        {
+          "type": "document",
+          "name": "Natural language answer card",
+          "x": 1468,
+          "y": 385,
+          "w": 118,
+          "h": 165,
+          "fill": "#FFFFFF",
+          "line": "#111111",
+          "line_width_px": 2,
+          "text": "Natural-\nlanguage\nanswer\ncard",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 14,
+            "bold": false,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "arrow",
+          "name": "Decoder to grounding bar",
+          "points": [
+            [
+              1415,
+              600
+            ],
+            [
+              1460,
+              600
+            ]
+          ],
+          "line": "#111111",
+          "line_width_px": 3,
+          "head_length_px": 14
+        },
+        {
+          "type": "rect",
+          "name": "Grounding bar frame",
+          "x": 1468,
+          "y": 575,
+          "w": 118,
+          "h": 58,
+          "fill": "#FFFFFF",
+          "line": "#111111",
+          "line_width_px": 2
+        },
+        {
+          "type": "polyline",
+          "name": "Grounding bar axis",
+          "points": [
+            [
+              1478,
+              610
+            ],
+            [
+              1576,
+              610
+            ]
+          ],
+          "line": "#111111",
+          "line_width_px": 1,
+          "fill": "none"
+        },
+        {
+          "type": "rect",
+          "name": "Grounding segment 1",
+          "x": 1484,
+          "y": 588,
+          "w": 18,
+          "h": 34,
+          "fill": "#E7E9ED",
+          "line": "none"
+        },
+        {
+          "type": "rect",
+          "name": "Grounding segment 2",
+          "x": 1510,
+          "y": 588,
+          "w": 20,
+          "h": 34,
+          "fill": "#F5DFDD",
+          "line": "none"
+        },
+        {
+          "type": "rect",
+          "name": "Grounding segment 3",
+          "x": 1535,
+          "y": 588,
+          "w": 28,
+          "h": 34,
+          "fill": "#DFEBD6",
+          "line": "none"
+        },
+        {
+          "type": "rect",
+          "name": "Grounding focus outline",
+          "x": 1532,
+          "y": 584,
+          "w": 34,
+          "h": 42,
+          "fill": "none",
+          "line": "#86AE6B",
+          "line_width_px": 2
+        },
+        {
+          "type": "text",
+          "name": "Grounding label",
+          "x": 1455,
+          "y": 638,
+          "w": 145,
+          "h": 70,
+          "text": "temporal\ngrounding",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 15,
+            "bold": false,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "text",
+          "name": "History label",
+          "x": 32,
+          "y": 690,
+          "w": 180,
+          "h": 35,
+          "text": "history clips",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 15,
+            "bold": false,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "text",
+          "name": "Current label",
+          "x": 230,
+          "y": 690,
+          "w": 200,
+          "h": 35,
+          "text": "current clip",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 15,
+            "bold": false,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "arrow",
+          "name": "Long memory update route",
+          "points": [
+            [
+              320,
+              465
+            ],
+            [
+              320,
+              345
+            ],
+            [
+              735,
+              345
+            ]
+          ],
+          "line": "#315D8D",
+          "line_width_px": 2,
+          "dash": true,
+          "head_length_px": 12
+        },
+        {
+          "type": "roundrect",
+          "name": "Feature calibration panel",
+          "x": 10,
+          "y": 748,
+          "w": 500,
+          "h": 240,
+          "radius_px": 22,
+          "fill": "none",
+          "line": "#315D8D",
+          "line_width_px": 3,
+          "dash": true
+        },
+        {
+          "type": "roundrect",
+          "name": "Confidence routing panel",
+          "x": 520,
+          "y": 748,
+          "w": 535,
+          "h": 240,
+          "radius_px": 22,
+          "fill": "none",
+          "line": "#315D8D",
+          "line_width_px": 3,
+          "dash": true
+        },
+        {
+          "type": "roundrect",
+          "name": "Outcome panel",
+          "x": 1065,
+          "y": 748,
+          "w": 525,
+          "h": 240,
+          "radius_px": 22,
+          "fill": "none",
+          "line": "#315D8D",
+          "line_width_px": 3,
+          "dash": true
+        },
+        {
+          "type": "text",
+          "name": "Feature panel title",
+          "x": 70,
+          "y": 755,
+          "w": 380,
+          "h": 35,
+          "text": "Feature Calibration",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 19,
+            "bold": true,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "text",
+          "name": "Routing panel title",
+          "x": 580,
+          "y": 755,
+          "w": 420,
+          "h": 35,
+          "text": "Confidence-Guided Routing",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 19,
+            "bold": true,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "text",
+          "name": "Outcome panel title",
+          "x": 1130,
+          "y": 755,
+          "w": 390,
+          "h": 35,
+          "text": "Behavioral Outcome",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 19,
+            "bold": true,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "rect",
+          "name": "Current feature cell 1",
+          "x": 58,
+          "y": 830,
+          "w": 24,
+          "h": 24,
+          "fill": "#E8EEF7",
+          "line": "#1F3A63",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Routed feature cell 1",
+          "x": 58,
+          "y": 920,
+          "w": 24,
+          "h": 24,
+          "fill": "#6E90BF",
+          "line": "#1F3A63",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Current feature cell 2",
+          "x": 89,
+          "y": 830,
+          "w": 24,
+          "h": 24,
+          "fill": "#E8EEF7",
+          "line": "#1F3A63",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Routed feature cell 2",
+          "x": 89,
+          "y": 920,
+          "w": 24,
+          "h": 24,
+          "fill": "#6E90BF",
+          "line": "#1F3A63",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Current feature cell 3",
+          "x": 120,
+          "y": 830,
+          "w": 24,
+          "h": 24,
+          "fill": "#E8EEF7",
+          "line": "#1F3A63",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Routed feature cell 3",
+          "x": 120,
+          "y": 920,
+          "w": 24,
+          "h": 24,
+          "fill": "#6E90BF",
+          "line": "#1F3A63",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Current feature cell 4",
+          "x": 151,
+          "y": 830,
+          "w": 24,
+          "h": 24,
+          "fill": "#E8EEF7",
+          "line": "#1F3A63",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Routed feature cell 4",
+          "x": 151,
+          "y": 920,
+          "w": 24,
+          "h": 24,
+          "fill": "#6E90BF",
+          "line": "#1F3A63",
+          "line_width_px": 1
+        },
+        {
+          "type": "ellipse",
+          "name": "Feature gap marker",
+          "x": 181,
+          "y": 849,
+          "w": 18,
+          "h": 18,
+          "fill": "#FFFFFF",
+          "line": "#1F3A63",
+          "line_width_px": 2
+        },
+        {
+          "type": "arrow",
+          "name": "Feature gap arrow",
+          "points": [
+            [
+              190,
+              895
+            ],
+            [
+              190,
+              864
+            ]
+          ],
+          "line": "#111111",
+          "line_width_px": 2,
+          "head_length_px": 9
+        },
+        {
+          "type": "arrow",
+          "name": "Routed gap arrow",
+          "points": [
+            [
+              190,
+              876
+            ],
+            [
+              190,
+              905
+            ]
+          ],
+          "line": "#111111",
+          "line_width_px": 2,
+          "head_length_px": 9
+        },
+        {
+          "type": "trapezoid",
+          "name": "Token encoder",
+          "x": 230,
+          "y": 825,
+          "w": 105,
+          "h": 125,
+          "orientation": "right_narrow",
+          "inset_px": 24,
+          "fill": "#CFDCEE",
+          "line": "#1F3A63",
+          "line_width_px": 3,
+          "text": "Token\nEncoder",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 16,
+            "bold": false,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "arrow",
+          "name": "Token encoder input",
+          "points": [
+            [
+              205,
+              887
+            ],
+            [
+              228,
+              887
+            ]
+          ],
+          "line": "#111111",
+          "line_width_px": 2,
+          "head_length_px": 10
+        },
+        {
+          "type": "arrow",
+          "name": "Token encoder output",
+          "points": [
+            [
+              338,
+              887
+            ],
+            [
+              377,
+              887
+            ]
+          ],
+          "line": "#111111",
+          "line_width_px": 2,
+          "head_length_px": 10
+        },
+        {
+          "type": "rect",
+          "name": "Calibrated feature cell 1",
+          "x": 385,
+          "y": 822,
+          "w": 28,
+          "h": 24,
+          "fill": "#DF8E86",
+          "line": "#111111",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Calibrated feature cell 2",
+          "x": 385,
+          "y": 846,
+          "w": 28,
+          "h": 24,
+          "fill": "#E69B93",
+          "line": "#111111",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Calibrated feature cell 3",
+          "x": 385,
+          "y": 870,
+          "w": 28,
+          "h": 24,
+          "fill": "#E7B3A8",
+          "line": "#111111",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Calibrated feature cell 4",
+          "x": 385,
+          "y": 894,
+          "w": 28,
+          "h": 24,
+          "fill": "#A3C18E",
+          "line": "#111111",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Calibrated feature cell 5",
+          "x": 385,
+          "y": 918,
+          "w": 28,
+          "h": 24,
+          "fill": "#89B376",
+          "line": "#111111",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Calibrated feature cell 6",
+          "x": 385,
+          "y": 942,
+          "w": 28,
+          "h": 24,
+          "fill": "#78A966",
+          "line": "#111111",
+          "line_width_px": 1
+        },
+        {
+          "type": "text",
+          "name": "Current feature label",
+          "x": 28,
+          "y": 792,
+          "w": 185,
+          "h": 35,
+          "text": "current clip\nfeatures",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 13,
+            "bold": false,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "text",
+          "name": "Memory feature label",
+          "x": 32,
+          "y": 946,
+          "w": 180,
+          "h": 35,
+          "text": "routed\nmemory features",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 13,
+            "bold": false,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "text",
+          "name": "Gap label",
+          "x": 160,
+          "y": 865,
+          "w": 70,
+          "h": 32,
+          "text": "gap",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 12,
+            "bold": false,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "text",
+          "name": "Drift label",
+          "x": 412,
+          "y": 842,
+          "w": 92,
+          "h": 94,
+          "text": "reduce\nsemantic\ndrift",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 12,
+            "bold": false,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "rect",
+          "name": "Routing thumbnail border 1",
+          "x": 555,
+          "y": 824,
+          "w": 58,
+          "h": 28,
+          "fill": "#FFFFFF",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "image",
+          "name": "Routing thumbnail 1",
+          "x": 557,
+          "y": 826,
+          "w": 54,
+          "h": 24,
+          "path": "media/abstract_frame_02.png",
+          "grayscale": true,
+          "alpha": 0.72
+        },
+        {
+          "type": "rect",
+          "name": "Uncertainty score r1c1",
+          "x": 625,
+          "y": 824,
+          "w": 28,
+          "h": 28,
+          "fill": "#F0C9C5",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Uncertainty score r1c2",
+          "x": 653,
+          "y": 824,
+          "w": 28,
+          "h": 28,
+          "fill": "#F1F2F4",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Uncertainty score r1c3",
+          "x": 681,
+          "y": 824,
+          "w": 28,
+          "h": 28,
+          "fill": "#EBC0BC",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Uncertainty score r1c4",
+          "x": 709,
+          "y": 824,
+          "w": 28,
+          "h": 28,
+          "fill": "#F0C9C5",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Uncertainty score r1c5",
+          "x": 737,
+          "y": 824,
+          "w": 28,
+          "h": 28,
+          "fill": "#F1F2F4",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Uncertainty score r1c6",
+          "x": 765,
+          "y": 824,
+          "w": 28,
+          "h": 28,
+          "fill": "#EBC0BC",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Uncertainty score r1c7",
+          "x": 793,
+          "y": 824,
+          "w": 28,
+          "h": 28,
+          "fill": "#F0C9C5",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Routing thumbnail border 2",
+          "x": 555,
+          "y": 852,
+          "w": 58,
+          "h": 28,
+          "fill": "#FFFFFF",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "image",
+          "name": "Routing thumbnail 2",
+          "x": 557,
+          "y": 854,
+          "w": 54,
+          "h": 24,
+          "path": "media/abstract_frame_03.png",
+          "grayscale": true,
+          "alpha": 0.72
+        },
+        {
+          "type": "rect",
+          "name": "Uncertainty score r2c1",
+          "x": 625,
+          "y": 852,
+          "w": 28,
+          "h": 28,
+          "fill": "#D5DEEC",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Uncertainty score r2c2",
+          "x": 653,
+          "y": 852,
+          "w": 28,
+          "h": 28,
+          "fill": "#E4E7EC",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Uncertainty score r2c3",
+          "x": 681,
+          "y": 852,
+          "w": 28,
+          "h": 28,
+          "fill": "#D9E3F2",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Uncertainty score r2c4",
+          "x": 709,
+          "y": 852,
+          "w": 28,
+          "h": 28,
+          "fill": "#D5DEEC",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Uncertainty score r2c5",
+          "x": 737,
+          "y": 852,
+          "w": 28,
+          "h": 28,
+          "fill": "#E4E7EC",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Uncertainty score r2c6",
+          "x": 765,
+          "y": 852,
+          "w": 28,
+          "h": 28,
+          "fill": "#D9E3F2",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Uncertainty score r2c7",
+          "x": 793,
+          "y": 852,
+          "w": 28,
+          "h": 28,
+          "fill": "#D5DEEC",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Routing thumbnail border 3",
+          "x": 555,
+          "y": 880,
+          "w": 58,
+          "h": 28,
+          "fill": "#FFFFFF",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "image",
+          "name": "Routing thumbnail 3",
+          "x": 557,
+          "y": 882,
+          "w": 54,
+          "h": 24,
+          "path": "media/abstract_frame_04.png",
+          "grayscale": false,
+          "alpha": 1.0
+        },
+        {
+          "type": "rect",
+          "name": "Uncertainty score r3c1",
+          "x": 625,
+          "y": 880,
+          "w": 28,
+          "h": 28,
+          "fill": "#F0C9C5",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Uncertainty score r3c2",
+          "x": 653,
+          "y": 880,
+          "w": 28,
+          "h": 28,
+          "fill": "#F1F2F4",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Uncertainty score r3c3",
+          "x": 681,
+          "y": 880,
+          "w": 28,
+          "h": 28,
+          "fill": "#EBC0BC",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Uncertainty score r3c4",
+          "x": 709,
+          "y": 880,
+          "w": 28,
+          "h": 28,
+          "fill": "#F0C9C5",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Uncertainty score r3c5",
+          "x": 737,
+          "y": 880,
+          "w": 28,
+          "h": 28,
+          "fill": "#F1F2F4",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Uncertainty score r3c6",
+          "x": 765,
+          "y": 880,
+          "w": 28,
+          "h": 28,
+          "fill": "#EBC0BC",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Uncertainty score r3c7",
+          "x": 793,
+          "y": 880,
+          "w": 28,
+          "h": 28,
+          "fill": "#F0C9C5",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Routing thumbnail border 4",
+          "x": 555,
+          "y": 908,
+          "w": 58,
+          "h": 28,
+          "fill": "#FFFFFF",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "image",
+          "name": "Routing thumbnail 4",
+          "x": 557,
+          "y": 910,
+          "w": 54,
+          "h": 24,
+          "path": "media/abstract_frame_05.png",
+          "grayscale": true,
+          "alpha": 0.72
+        },
+        {
+          "type": "rect",
+          "name": "Uncertainty score r4c1",
+          "x": 625,
+          "y": 908,
+          "w": 28,
+          "h": 28,
+          "fill": "#D5DEEC",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Uncertainty score r4c2",
+          "x": 653,
+          "y": 908,
+          "w": 28,
+          "h": 28,
+          "fill": "#E4E7EC",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Uncertainty score r4c3",
+          "x": 681,
+          "y": 908,
+          "w": 28,
+          "h": 28,
+          "fill": "#D9E3F2",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Uncertainty score r4c4",
+          "x": 709,
+          "y": 908,
+          "w": 28,
+          "h": 28,
+          "fill": "#D5DEEC",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Uncertainty score r4c5",
+          "x": 737,
+          "y": 908,
+          "w": 28,
+          "h": 28,
+          "fill": "#E4E7EC",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Uncertainty score r4c6",
+          "x": 765,
+          "y": 908,
+          "w": 28,
+          "h": 28,
+          "fill": "#D9E3F2",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Uncertainty score r4c7",
+          "x": 793,
+          "y": 908,
+          "w": 28,
+          "h": 28,
+          "fill": "#D5DEEC",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Routing thumbnail border 5",
+          "x": 555,
+          "y": 936,
+          "w": 58,
+          "h": 28,
+          "fill": "#FFFFFF",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "image",
+          "name": "Routing thumbnail 5",
+          "x": 557,
+          "y": 938,
+          "w": 54,
+          "h": 24,
+          "path": "media/abstract_frame_06.png",
+          "grayscale": true,
+          "alpha": 0.72
+        },
+        {
+          "type": "rect",
+          "name": "Uncertainty score r5c1",
+          "x": 625,
+          "y": 936,
+          "w": 28,
+          "h": 28,
+          "fill": "#F0C9C5",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Uncertainty score r5c2",
+          "x": 653,
+          "y": 936,
+          "w": 28,
+          "h": 28,
+          "fill": "#F1F2F4",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Uncertainty score r5c3",
+          "x": 681,
+          "y": 936,
+          "w": 28,
+          "h": 28,
+          "fill": "#EBC0BC",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Uncertainty score r5c4",
+          "x": 709,
+          "y": 936,
+          "w": 28,
+          "h": 28,
+          "fill": "#F0C9C5",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Uncertainty score r5c5",
+          "x": 737,
+          "y": 936,
+          "w": 28,
+          "h": 28,
+          "fill": "#F1F2F4",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Uncertainty score r5c6",
+          "x": 765,
+          "y": 936,
+          "w": 28,
+          "h": 28,
+          "fill": "#EBC0BC",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Uncertainty score r5c7",
+          "x": 793,
+          "y": 936,
+          "w": 28,
+          "h": 28,
+          "fill": "#F0C9C5",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "text",
+          "name": "Matrix label",
+          "x": 585,
+          "y": 956,
+          "w": 250,
+          "h": 30,
+          "text": "uncertainty scores",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 13,
+            "bold": false,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "rect",
+          "name": "Iterate one cell 1",
+          "x": 855,
+          "y": 824,
+          "w": 28,
+          "h": 26,
+          "fill": "#EAB3AD",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Iterate two cell 1",
+          "x": 855,
+          "y": 933,
+          "w": 28,
+          "h": 26,
+          "fill": "#A2C38A",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Iterate one cell 2",
+          "x": 883,
+          "y": 824,
+          "w": 28,
+          "h": 26,
+          "fill": "#EAB3AD",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Iterate two cell 2",
+          "x": 883,
+          "y": 933,
+          "w": 28,
+          "h": 26,
+          "fill": "#A2C38A",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Iterate one cell 3",
+          "x": 911,
+          "y": 824,
+          "w": 28,
+          "h": 26,
+          "fill": "#EAB3AD",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Iterate two cell 3",
+          "x": 911,
+          "y": 933,
+          "w": 28,
+          "h": 26,
+          "fill": "#A2C38A",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Iterate one cell 4",
+          "x": 939,
+          "y": 824,
+          "w": 28,
+          "h": 26,
+          "fill": "#EAB3AD",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Iterate two cell 4",
+          "x": 939,
+          "y": 933,
+          "w": 28,
+          "h": 26,
+          "fill": "#E1ECD9",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Iterate one cell 5",
+          "x": 967,
+          "y": 824,
+          "w": 28,
+          "h": 26,
+          "fill": "#F4DFDC",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Iterate two cell 5",
+          "x": 967,
+          "y": 933,
+          "w": 28,
+          "h": 26,
+          "fill": "#E1ECD9",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Iterate one cell 6",
+          "x": 995,
+          "y": 824,
+          "w": 28,
+          "h": 26,
+          "fill": "#F4DFDC",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Iterate two cell 6",
+          "x": 995,
+          "y": 933,
+          "w": 28,
+          "h": 26,
+          "fill": "#E1ECD9",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "text",
+          "name": "Iterate one label",
+          "x": 845,
+          "y": 792,
+          "w": 185,
+          "h": 30,
+          "text": "Iterate I",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 15,
+            "bold": false,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "text",
+          "name": "Noisy retrieval label",
+          "x": 842,
+          "y": 852,
+          "w": 205,
+          "h": 58,
+          "text": "broad noisy\nrouting",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 14,
+            "bold": false,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "text",
+          "name": "Iterate two label",
+          "x": 845,
+          "y": 903,
+          "w": 185,
+          "h": 30,
+          "text": "Iterate II",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 15,
+            "bold": false,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "text",
+          "name": "Focused pruning label",
+          "x": 830,
+          "y": 960,
+          "w": 225,
+          "h": 28,
+          "text": "after focused pruning",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 13,
+            "bold": false,
+            "color": "#111111",
+            "align": "center",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "arrow",
+          "name": "Iteration loop down",
+          "points": [
+            [
+              1030,
+              840
+            ],
+            [
+              1044,
+              840
+            ],
+            [
+              1044,
+              935
+            ],
+            [
+              1027,
+              935
+            ]
+          ],
+          "line": "#111111",
+          "line_width_px": 2,
+          "head_length_px": 10
+        },
+        {
+          "type": "arrow",
+          "name": "Iteration loop up",
+          "points": [
+            [
+              842,
+              946
+            ],
+            [
+              824,
+              946
+            ],
+            [
+              824,
+              836
+            ],
+            [
+              842,
+              836
+            ]
+          ],
+          "line": "#111111",
+          "line_width_px": 2,
+          "head_length_px": 10
+        },
+        {
+          "type": "text",
+          "name": "Outcome label 1",
+          "x": 1110,
+          "y": 792,
+          "w": 445,
+          "h": 28,
+          "text": "(1) suppress irrelevant background",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 11.5,
+            "bold": false,
+            "color": "#111111",
+            "align": "left",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "ellipse",
+          "name": "Outcome prohibit 1 ring",
+          "x": 1082,
+          "y": 817,
+          "w": 26,
+          "h": 26,
+          "fill": "none",
+          "line": "#B53B32",
+          "line_width_px": 3
+        },
+        {
+          "type": "polyline",
+          "name": "Outcome prohibit 1 slash",
+          "points": [
+            [
+              1087,
+              822
+            ],
+            [
+              1103,
+              838
+            ]
+          ],
+          "fill": "none",
+          "line": "#B53B32",
+          "line_width_px": 3
+        },
+        {
+          "type": "rect",
+          "name": "Outcome before frame 1",
+          "x": 1122,
+          "y": 814,
+          "w": 188,
+          "h": 34,
+          "fill": "#FFFFFF",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Outcome before 1 segment 1",
+          "x": 1124,
+          "y": 816,
+          "w": 34,
+          "h": 30,
+          "fill": "#E7E9ED",
+          "line": "none"
+        },
+        {
+          "type": "rect",
+          "name": "Outcome before 1 segment 2",
+          "x": 1160,
+          "y": 816,
+          "w": 34,
+          "h": 30,
+          "fill": "#C8CDD2",
+          "line": "none"
+        },
+        {
+          "type": "rect",
+          "name": "Outcome before 1 segment 3",
+          "x": 1196,
+          "y": 816,
+          "w": 34,
+          "h": 30,
+          "fill": "#F5DFDD",
+          "line": "none"
+        },
+        {
+          "type": "rect",
+          "name": "Outcome before 1 segment 4",
+          "x": 1232,
+          "y": 816,
+          "w": 34,
+          "h": 30,
+          "fill": "#AEB9C6",
+          "line": "none"
+        },
+        {
+          "type": "rect",
+          "name": "Outcome before 1 segment 5",
+          "x": 1268,
+          "y": 816,
+          "w": 34,
+          "h": 30,
+          "fill": "#D3D6DA",
+          "line": "none"
+        },
+        {
+          "type": "arrow",
+          "name": "Outcome transition 1",
+          "points": [
+            [
+              1312,
+              831
+            ],
+            [
+              1360,
+              831
+            ]
+          ],
+          "line": "#111111",
+          "line_width_px": 2,
+          "head_length_px": 11
+        },
+        {
+          "type": "rect",
+          "name": "Outcome after frame 1",
+          "x": 1365,
+          "y": 814,
+          "w": 194,
+          "h": 34,
+          "fill": "#FFFFFF",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Outcome after 1 segment 1",
+          "x": 1367,
+          "y": 816,
+          "w": 35,
+          "h": 30,
+          "fill": "#FFFFFF",
+          "line": "none"
+        },
+        {
+          "type": "rect",
+          "name": "Outcome after 1 segment 2",
+          "x": 1404,
+          "y": 816,
+          "w": 35,
+          "h": 30,
+          "fill": "#DFEBD6",
+          "line": "none"
+        },
+        {
+          "type": "rect",
+          "name": "Outcome after 1 segment 3",
+          "x": 1441,
+          "y": 816,
+          "w": 35,
+          "h": 30,
+          "fill": "#DFEBD6",
+          "line": "none"
+        },
+        {
+          "type": "rect",
+          "name": "Outcome after 1 segment 4",
+          "x": 1478,
+          "y": 816,
+          "w": 35,
+          "h": 30,
+          "fill": "#FFFFFF",
+          "line": "none"
+        },
+        {
+          "type": "rect",
+          "name": "Outcome after 1 segment 5",
+          "x": 1515,
+          "y": 816,
+          "w": 35,
+          "h": 30,
+          "fill": "#FFFFFF",
+          "line": "none"
+        },
+        {
+          "type": "rect",
+          "name": "Outcome focus outline 1",
+          "x": 1402,
+          "y": 812,
+          "w": 41,
+          "h": 38,
+          "fill": "none",
+          "line": "#86AE6B",
+          "line_width_px": 2
+        },
+        {
+          "type": "text",
+          "name": "Outcome label 2",
+          "x": 1110,
+          "y": 854,
+          "w": 445,
+          "h": 28,
+          "text": "(2) preserve key event boundaries",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 11.5,
+            "bold": false,
+            "color": "#111111",
+            "align": "left",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "ellipse",
+          "name": "Outcome prohibit 2 ring",
+          "x": 1082,
+          "y": 879,
+          "w": 26,
+          "h": 26,
+          "fill": "none",
+          "line": "#B53B32",
+          "line_width_px": 3
+        },
+        {
+          "type": "polyline",
+          "name": "Outcome prohibit 2 slash",
+          "points": [
+            [
+              1087,
+              884
+            ],
+            [
+              1103,
+              900
+            ]
+          ],
+          "fill": "none",
+          "line": "#B53B32",
+          "line_width_px": 3
+        },
+        {
+          "type": "rect",
+          "name": "Outcome before frame 2",
+          "x": 1122,
+          "y": 876,
+          "w": 188,
+          "h": 34,
+          "fill": "#FFFFFF",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Outcome before 2 segment 1",
+          "x": 1124,
+          "y": 878,
+          "w": 34,
+          "h": 30,
+          "fill": "#E7E9ED",
+          "line": "none"
+        },
+        {
+          "type": "rect",
+          "name": "Outcome before 2 segment 2",
+          "x": 1160,
+          "y": 878,
+          "w": 34,
+          "h": 30,
+          "fill": "#C8CDD2",
+          "line": "none"
+        },
+        {
+          "type": "rect",
+          "name": "Outcome before 2 segment 3",
+          "x": 1196,
+          "y": 878,
+          "w": 34,
+          "h": 30,
+          "fill": "#F5DFDD",
+          "line": "none"
+        },
+        {
+          "type": "rect",
+          "name": "Outcome before 2 segment 4",
+          "x": 1232,
+          "y": 878,
+          "w": 34,
+          "h": 30,
+          "fill": "#AEB9C6",
+          "line": "none"
+        },
+        {
+          "type": "rect",
+          "name": "Outcome before 2 segment 5",
+          "x": 1268,
+          "y": 878,
+          "w": 34,
+          "h": 30,
+          "fill": "#D3D6DA",
+          "line": "none"
+        },
+        {
+          "type": "arrow",
+          "name": "Outcome transition 2",
+          "points": [
+            [
+              1312,
+              893
+            ],
+            [
+              1360,
+              893
+            ]
+          ],
+          "line": "#111111",
+          "line_width_px": 2,
+          "head_length_px": 11
+        },
+        {
+          "type": "rect",
+          "name": "Outcome after frame 2",
+          "x": 1365,
+          "y": 876,
+          "w": 194,
+          "h": 34,
+          "fill": "#FFFFFF",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Outcome after 2 segment 1",
+          "x": 1367,
+          "y": 878,
+          "w": 35,
+          "h": 30,
+          "fill": "#FFFFFF",
+          "line": "none"
+        },
+        {
+          "type": "rect",
+          "name": "Outcome after 2 segment 2",
+          "x": 1404,
+          "y": 878,
+          "w": 35,
+          "h": 30,
+          "fill": "#FFFFFF",
+          "line": "none"
+        },
+        {
+          "type": "rect",
+          "name": "Outcome after 2 segment 3",
+          "x": 1441,
+          "y": 878,
+          "w": 35,
+          "h": 30,
+          "fill": "#DFEBD6",
+          "line": "none"
+        },
+        {
+          "type": "rect",
+          "name": "Outcome after 2 segment 4",
+          "x": 1478,
+          "y": 878,
+          "w": 35,
+          "h": 30,
+          "fill": "#FFFFFF",
+          "line": "none"
+        },
+        {
+          "type": "rect",
+          "name": "Outcome after 2 segment 5",
+          "x": 1515,
+          "y": 878,
+          "w": 35,
+          "h": 30,
+          "fill": "#FFFFFF",
+          "line": "none"
+        },
+        {
+          "type": "rect",
+          "name": "Outcome focus outline 2",
+          "x": 1439,
+          "y": 874,
+          "w": 41,
+          "h": 38,
+          "fill": "none",
+          "line": "#86AE6B",
+          "line_width_px": 2
+        },
+        {
+          "type": "text",
+          "name": "Outcome label 3",
+          "x": 1110,
+          "y": 916,
+          "w": 445,
+          "h": 28,
+          "text": "(3) improve evidence grounding",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 11.5,
+            "bold": false,
+            "color": "#111111",
+            "align": "left",
+            "valign": "middle",
+            "margin_px": 1.5
+          }
+        },
+        {
+          "type": "ellipse",
+          "name": "Outcome prohibit 3 ring",
+          "x": 1082,
+          "y": 941,
+          "w": 26,
+          "h": 26,
+          "fill": "none",
+          "line": "#B53B32",
+          "line_width_px": 3
+        },
+        {
+          "type": "polyline",
+          "name": "Outcome prohibit 3 slash",
+          "points": [
+            [
+              1087,
+              946
+            ],
+            [
+              1103,
+              962
+            ]
+          ],
+          "fill": "none",
+          "line": "#B53B32",
+          "line_width_px": 3
+        },
+        {
+          "type": "rect",
+          "name": "Outcome before frame 3",
+          "x": 1122,
+          "y": 938,
+          "w": 188,
+          "h": 34,
+          "fill": "#FFFFFF",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Outcome before 3 segment 1",
+          "x": 1124,
+          "y": 940,
+          "w": 34,
+          "h": 30,
+          "fill": "#E7E9ED",
+          "line": "none"
+        },
+        {
+          "type": "rect",
+          "name": "Outcome before 3 segment 2",
+          "x": 1160,
+          "y": 940,
+          "w": 34,
+          "h": 30,
+          "fill": "#C8CDD2",
+          "line": "none"
+        },
+        {
+          "type": "rect",
+          "name": "Outcome before 3 segment 3",
+          "x": 1196,
+          "y": 940,
+          "w": 34,
+          "h": 30,
+          "fill": "#F5DFDD",
+          "line": "none"
+        },
+        {
+          "type": "rect",
+          "name": "Outcome before 3 segment 4",
+          "x": 1232,
+          "y": 940,
+          "w": 34,
+          "h": 30,
+          "fill": "#AEB9C6",
+          "line": "none"
+        },
+        {
+          "type": "rect",
+          "name": "Outcome before 3 segment 5",
+          "x": 1268,
+          "y": 940,
+          "w": 34,
+          "h": 30,
+          "fill": "#D3D6DA",
+          "line": "none"
+        },
+        {
+          "type": "arrow",
+          "name": "Outcome transition 3",
+          "points": [
+            [
+              1312,
+              955
+            ],
+            [
+              1360,
+              955
+            ]
+          ],
+          "line": "#111111",
+          "line_width_px": 2,
+          "head_length_px": 11
+        },
+        {
+          "type": "rect",
+          "name": "Outcome after frame 3",
+          "x": 1365,
+          "y": 938,
+          "w": 194,
+          "h": 34,
+          "fill": "#FFFFFF",
+          "line": "#6D7480",
+          "line_width_px": 1
+        },
+        {
+          "type": "rect",
+          "name": "Outcome after 3 segment 1",
+          "x": 1367,
+          "y": 940,
+          "w": 35,
+          "h": 30,
+          "fill": "#FFFFFF",
+          "line": "none"
+        },
+        {
+          "type": "rect",
+          "name": "Outcome after 3 segment 2",
+          "x": 1404,
+          "y": 940,
+          "w": 35,
+          "h": 30,
+          "fill": "#FFFFFF",
+          "line": "none"
+        },
+        {
+          "type": "rect",
+          "name": "Outcome after 3 segment 3",
+          "x": 1441,
+          "y": 940,
+          "w": 35,
+          "h": 30,
+          "fill": "#DFEBD6",
+          "line": "none"
+        },
+        {
+          "type": "rect",
+          "name": "Outcome after 3 segment 4",
+          "x": 1478,
+          "y": 940,
+          "w": 35,
+          "h": 30,
+          "fill": "#DFEBD6",
+          "line": "none"
+        },
+        {
+          "type": "rect",
+          "name": "Outcome after 3 segment 5",
+          "x": 1515,
+          "y": 940,
+          "w": 35,
+          "h": 30,
+          "fill": "#FFFFFF",
+          "line": "none"
+        },
+        {
+          "type": "rect",
+          "name": "Outcome focus outline 3",
+          "x": 1476,
+          "y": 936,
+          "w": 41,
+          "h": 38,
+          "fill": "none",
+          "line": "#86AE6B",
+          "line_width_px": 2
+        }
+      ]
+    }
+  ]
+}

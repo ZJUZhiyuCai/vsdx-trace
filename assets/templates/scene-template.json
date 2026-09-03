@@ -1,0 +1,211 @@
+{
+  "version": "1.0",
+  "document": {
+    "title": "High-fidelity editable Visio reconstruction",
+    "author": "OpenAI",
+    "ppi": 100,
+    "created_utc": "2000-01-01T00:00:00Z",
+    "deterministic_zip_timestamps": true
+  },
+  "canvas": {
+    "width_px": 1600,
+    "height_px": 900,
+    "background": "#FFFFFF"
+  },
+  "include_reference_page": false,
+  "pages": [
+    {
+      "name": "Editable Reconstruction",
+      "background": "#FFFFFF",
+      "shapes": [
+        {
+          "type": "roundrect",
+          "name": "Example dashed panel",
+          "x": 40,
+          "y": 40,
+          "w": 700,
+          "h": 280,
+          "radius_px": 28,
+          "fill": "#F3F6FB",
+          "line": "#284E7F",
+          "line_width_px": 3,
+          "dash": true
+        },
+        {
+          "type": "text",
+          "name": "Example title",
+          "x": 110,
+          "y": 55,
+          "w": 560,
+          "h": 60,
+          "text": "Editable Visio reconstruction",
+          "text_style": {
+            "font_family": "Arial",
+            "size_pt": 24,
+            "bold": true,
+            "align": "center",
+            "valign": "middle",
+            "color": "#000000"
+          }
+        },
+        {
+          "type": "cylinder",
+          "name": "Memory bank",
+          "x": 110,
+          "y": 140,
+          "w": 180,
+          "h": 120,
+          "fill": "#CFDCF0",
+          "line": "#17335D",
+          "line_width_px": 3,
+          "text": "Memory\nBank",
+          "text_style": {
+            "size_pt": 18,
+            "align": "center",
+            "valign": "middle"
+          }
+        },
+        {
+          "type": "arrow",
+          "name": "Routing arrow",
+          "points": [
+            [
+              320,
+              200
+            ],
+            [
+              470,
+              200
+            ]
+          ],
+          "line": "#000000",
+          "line_width_px": 4,
+          "head_length_px": 18
+        },
+        {
+          "type": "roundrect",
+          "name": "Router",
+          "x": 500,
+          "y": 150,
+          "w": 170,
+          "h": 100,
+          "radius_px": 22,
+          "fill": "#CFDCF0",
+          "line": "#17335D",
+          "line_width_px": 3,
+          "text": "Memory\nRouter",
+          "text_style": {
+            "size_pt": 18,
+            "align": "center",
+            "valign": "middle"
+          }
+        },
+        {
+          "type": "image",
+          "name": "Sample evidence frame",
+          "x": 820,
+          "y": 90,
+          "w": 260,
+          "h": 146,
+          "path": "sample-evidence.png"
+        },
+        {
+          "type": "trapezoid",
+          "name": "Decoder",
+          "x": 1140,
+          "y": 110,
+          "w": 230,
+          "h": 180,
+          "orientation": "right_narrow",
+          "fill": "#CFDCF0",
+          "line": "#17335D",
+          "line_width_px": 3,
+          "text": "Answer &\nGrounding\nDecoder",
+          "text_style": {
+            "size_pt": 18,
+            "align": "center",
+            "valign": "middle"
+          }
+        },
+        {
+          "type": "document",
+          "name": "Answer card",
+          "x": 1200,
+          "y": 410,
+          "w": 260,
+          "h": 190,
+          "fill": "#FFFFFF",
+          "line": "#000000",
+          "line_width_px": 3,
+          "text": "Natural-language\nanswer card",
+          "text_style": {
+            "size_pt": 18,
+            "align": "center",
+            "valign": "middle"
+          }
+        },
+        {
+          "type": "polygon",
+          "name": "Warning triangle",
+          "points": [
+            [
+              250,
+              520
+            ],
+            [
+              300,
+              610
+            ],
+            [
+              200,
+              610
+            ]
+          ],
+          "fill": "#F6E6E4",
+          "line": "#B63228",
+          "line_width_px": 4
+        },
+        {
+          "type": "text",
+          "name": "Warning mark",
+          "x": 226,
+          "y": 540,
+          "w": 48,
+          "h": 60,
+          "text": "!",
+          "text_style": {
+            "size_pt": 28,
+            "bold": true,
+            "align": "center",
+            "valign": "middle"
+          }
+        },
+        {
+          "type": "arrow",
+          "name": "Bent arrow",
+          "points": [
+            [
+              400,
+              600
+            ],
+            [
+              600,
+              600
+            ],
+            [
+              600,
+              720
+            ],
+            [
+              850,
+              720
+            ]
+          ],
+          "line": "#284E7F",
+          "line_width_px": 4,
+          "head_length_px": 18
+        }
+      ]
+    }
+  ]
+}

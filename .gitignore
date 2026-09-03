@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.pytest_cache/
+.venv/
+work/
+dist/
+*.skill.zip

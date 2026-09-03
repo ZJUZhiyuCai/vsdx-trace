@@ -1,0 +1,22 @@
+{
+  "reference": "assets/gold/synthetic_event_routing_reference.png",
+  "candidate": "assets/gold/synthetic_event_routing_preview.png",
+  "reference_size": [
+    1600,
+    1000
+  ],
+  "candidate_original_size": [
+    1600,
+    1000
+  ],
+  "alignment_mode": "resize",
+  "metrics": {
+    "normalized_mae": 0.051508,
+    "normalized_rmse": 0.181206,
+    "pixel_similarity_1_minus_mae": 0.948492,
+    "edge_f1_with_1px_tolerance": 0.838791,
+    "rgb_histogram_intersection": 0.958483,
+    "diagnostic_score": 0.91708
+  },
+  "note": "Diagnostic only. The source and local raster frames are procedurally generated and contain no user data. Editability and visual inspection override raw pixel score."
+}

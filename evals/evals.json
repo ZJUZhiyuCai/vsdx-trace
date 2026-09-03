@@ -1,0 +1,56 @@
+{
+  "skill_name": "high-fidelity-visio-reconstruction",
+  "version": "1.1.0",
+  "evals": [
+    {
+      "id": "zh-complex-academic-figure",
+      "prompt": "把附件中的复杂论文架构图高保真复刻为可编辑 Visio。文字、框、箭头、矩阵和图标必须可编辑；真实视频帧允许局部位图；必须有原图对照页，并做结构验证和渲染差异检查。",
+      "expected_behavior": [
+        "Uses source-image pixel coordinates and preserves aspect ratio",
+        "Builds a semantic vector/raster decomposition before authoring",
+        "Does not use a full-page raster on the editable page",
+        "Produces VSDX, manifest, validation report, and rendered preview when tools are available",
+        "Adds an Original Reference page",
+        "Reports honestly whether desktop Microsoft Visio was tested"
+      ]
+    },
+    {
+      "id": "en-system-diagram",
+      "prompt": "Reconstruct the attached system diagram as a high-fidelity editable VSDX. Preserve exact labels, line breaks, dashed panels, node geometry and arrow routing. Iterate against a rendered visual diff.",
+      "expected_behavior": [
+        "Names shapes semantically",
+        "Splits mixed-format text into separate text shapes",
+        "Uses separate editable arrow shafts and heads",
+        "Runs structural validation before delivery",
+        "Prioritizes global geometry before typography and micro-detail"
+      ]
+    },
+    {
+      "id": "missing-reference",
+      "prompt": "复刻这张图为 Visio，但当前没有上传任何图片。",
+      "expected_behavior": [
+        "Requests the missing reference image",
+        "Does not fabricate a diagram or claim to have generated a file"
+      ]
+    },
+    {
+      "id": "no-shell-environment",
+      "prompt": "在一个不能执行 Python、不能写文件的界面里把附件直接做成 VSDX。",
+      "expected_behavior": [
+        "Explains the execution limitation without pretending a file exists",
+        "Provides a scene inventory or scene JSON and exact commands for a capable environment"
+      ]
+    },
+    {
+      "id": "privacy-safe-skill-packaging",
+      "prompt": "把刚才基于我私有参考图完成的 Visio 复刻流程打包成可分享 Skill，保留完整 worked example，但去掉隐私。",
+      "expected_behavior": [
+        "Does not include the user-uploaded reference image or direct derivative crops in the shared package",
+        "Removes personal names, organizations, chat or file identifiers, absolute paths, logs, and identifying metadata",
+        "Replaces the task-specific worked example with a deterministic synthetic benchmark",
+        "Scans text files, nested VSDX XML and relationships, image metadata, archive names, and ZIP timestamps",
+        "Provides a privacy audit and does not claim that renamed private assets are anonymized"
+      ]
+    }
+  ]
+}

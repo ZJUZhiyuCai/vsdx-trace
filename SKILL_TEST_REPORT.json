@@ -1,0 +1,73 @@
+{
+  "skill_name": "high-fidelity-visio-reconstruction",
+  "version": "1.1.0",
+  "edition": "privacy-sanitized-full",
+  "tested_at_utc": "2026-09-03",
+  "skill_spec_checks": {
+    "quick_validate_passed": true,
+    "yaml_frontmatter_parsed": true,
+    "name_matches_directory": true,
+    "name_pattern_valid": true,
+    "name_length": 34,
+    "description_length": 386,
+    "skill_md_lines": 312,
+    "all_relative_markdown_links_exist": true,
+    "all_referenced_scripts_and_assets_exist": true
+  },
+  "runtime": {
+    "python": "3.14.6",
+    "pillow": "12.2.0",
+    "numpy": "2.4.6",
+    "lxml": "6.1.1",
+    "pyyaml": "6.0.3",
+    "libreoffice": "26.2.5.2",
+    "poppler_pdftoppm": "26.05.0",
+    "microsoft_visio_desktop_tested": false
+  },
+  "tests": {
+    "python_compile": {
+      "passed": true,
+      "files": 11,
+      "scope": "scripts/*.py and examples/*.py"
+    },
+    "generic_scene_build": {
+      "passed": true,
+      "structural_validation": "valid",
+      "page_count": 1,
+      "shape_count": 15,
+      "text_shape_count": 6,
+      "embedded_image_count": 1
+    },
+    "bundled_gold_validation": {
+      "passed": true,
+      "structural_validation": "valid",
+      "page_count": 2,
+      "editable_page_shape_count": 269,
+      "editable_page_text_shape_count": 54,
+      "editable_page_embedded_image_count": 19,
+      "reference_page_embedded_image_count": 1
+    },
+    "synthetic_gold_rebuild": {
+      "passed": true,
+      "headless_render": "passed",
+      "pixel_similarity": 0.949396,
+      "edge_f1_with_1px_tolerance": 0.84069,
+      "diagnostic_score": 0.9178,
+      "vsdx_xml_and_relationship_parts_byte_identical": true,
+      "decoded_embedded_image_pixels_identical": true,
+      "vsdx_archive_byte_identical": false,
+      "archive_difference_explanation": "PNG encoder output differs across Pillow/zlib versions even when decoded pixels, VSDX XML, relationships, metadata, and archive timestamps are identical."
+    },
+    "privacy_scan": {
+      "passed": true,
+      "files_scanned": 54,
+      "finding_count": 0,
+      "deny_terms_checked": 3
+    }
+  },
+  "limitations": [
+    "Microsoft Visio desktop was not available for an application-native open and render test.",
+    "Font substitution and antialiasing may change text spacing on other machines.",
+    "Byte-identical PNG compression is not guaranteed across Pillow/zlib versions; decoded image pixels and deterministic VSDX metadata remain reproducible."
+  ]
+}

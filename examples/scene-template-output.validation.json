@@ -1,0 +1,16 @@
+{
+  "valid": true,
+  "issues": [],
+  "warnings": [],
+  "pages": [
+    {
+      "name": "Editable Reconstruction",
+      "part": "visio/pages/page1.xml",
+      "shape_count": 15,
+      "text_shape_count": 6,
+      "embedded_image_count": 1
+    }
+  ],
+  "file": "examples/scene-template-output.vsdx",
+  "size_bytes": 9214
+}

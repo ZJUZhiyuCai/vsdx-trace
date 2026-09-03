@@ -1,0 +1,19 @@
+{
+  "output": "examples/scene-template-output.vsdx",
+  "title": "High-fidelity editable Visio reconstruction",
+  "author": "OpenAI",
+  "pages": [
+    {
+      "name": "Editable Reconstruction",
+      "width_px": 1600.0,
+      "height_px": 900.0,
+      "ppi": 100.0,
+      "shape_count": 15,
+      "image_count": 1
+    }
+  ],
+  "fonts": [
+    "Arial"
+  ],
+  "warnings": []
+}
