@@ -3,7 +3,7 @@ name: vsdx-trace
 description: Reconstruct raster references as high-fidelity, independently editable Microsoft Visio VSDX files. Use when a user asks to 复刻、临摹、重绘 a screenshot, paper figure, flowchart, system diagram, or model architecture as editable Visio, especially when iterative visual matching matters. Do not use for ordinary image generation or flat image embedding.
 license: See LICENSE
 metadata:
-  author: OpenAI
+  author: ZJUZhiyuCai
   maintainer: ZJUZhiyuCai
   version: "2.0.0"
   artifact-type: "vsdx"
